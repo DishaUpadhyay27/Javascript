@@ -1,0 +1,38 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	<title>Lab 4  Functions </title>
+	<meta charset="utf-8">
+	<style>
+	body
+	{
+	 background-image: url("Image/Ferrari.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	text-align:center;
+	border-radius: 14px; 
+	background-attachment : fixed; 
+	font-size:100%;
+	}
+	</style>
+	</head>
+	<body style="body">
+	<h1 align=center"><u>Lab 4 -Functions</u></h1>
+	
+	<script type="text/javascript">
+	
+	document.write("<center><H1 style=color:#191970 ><u>Mileage Calculator</H1></center>");
+	
+	var miles  = prompt("please enter number of Miles driven.");
+	var gallons  = prompt("please enter number of Gallons used.");
+	
+	var mileage = function mileage_calculator(miles,gallons){
+	
+	return miles/gallons;
+	};
+	document.write ("<p>" + "Miles Driven: " + miles + "<br>");
+	document.write ("Gallons Used: " + gallons + "<br>");
+    document.write ("Mileage: " , mileage(miles,gallons) + "Average (miles per gallon) " + "<br>" + "</p>");
+	</script>
+	</body>
+	</html>

@@ -1,0 +1,293 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Assignment -Catalog of Product</title>
+	<style type ="text/css">
+	body
+	{
+	background-color:#ff884d;
+	font-family:Calibri;
+	font-size:20px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+		background-color:yellow;
+	
+	}
+	
+		article
+		{
+			width: 10%;
+			margin: 10px 10px 10px 10px;
+		}
+		h1
+		{
+			color: black;
+			font-size:40px;
+			text-shadow: 1px 1px black;
+			font-align:center;
+			
+			
+		}	
+		.tabletag 
+		{
+			font-family: verdana, arial, sans-serif;
+			font-align :center
+			border-width: 5px;
+			border-color: #6ba535;
+			border-collapse: collapse;
+			margin-left:0px;
+			margin-right:0px;
+			background-attachment : fixed; 
+			color: black;
+			  font-size: 20px;
+			
+		}
+ 
+		.tabletag th 
+		{
+			border: 4px solid red;
+			padding: 1px;
+			text-align:center;
+			 width: 10%;
+			 height: 20px;
+			 color: black;
+			   font-size: 20px;
+			 
+		}
+ 
+		.tabletag td 
+		{
+			border: 4px solid black;
+			padding: 2px;	
+			text-align:center;
+			width: 10%;
+			 height: 20px;
+			 color: black;
+			  font-size: 20px;
+			
+		}		
+	nav{
+	background: green;
+	height: 40px;
+	width: 100%;
+}	
+nav a{
+	text-decoration: none;
+	color: fff;
+	margin-right: 5px;
+	padding: 5px;
+	line-height: 2.1em;
+	}
+nav a :hover{
+	background: #666;
+	}
+section{
+	width : 100%
+	padding: 5x;
+}	
+	
+Footer{
+	background: green;
+	text-align: center;
+	background-colorcolor: green;
+	height: 80px;
+	width:100%;
+}	
+		
+</style>
+</head>
+  <div class "container"
+        <header>
+		<h1>Fabulous Decor</h1>
+		</header>
+		<nav>
+		<a href="index.html">Home</a>		
+		<a href="FAQS.html">FAQ's</a>
+		<a href="AboutUs.html">About Us</a>
+		<a href="WhatsNew.html">What's New </a>
+		<a href="Catalogofproduct.html">Catalog of product </a>
+		<a href="CustomerService.html">Contact</a>			
+		</nav>
+
+
+
+<body>
+<script type="text/javascript">
+function Categoryinventory(the_Title,the_Rating,the_Price,the_image,the_shipment){
+//this.Genre = the_Genre;
+this.Title = the_Title;
+this.Rating = the_Rating;
+this.Price = the_Price;
+this.image = the_image;
+this.shipment = the_shipment;
+}
+
+function displayClass() {
+
+//document.write("<br>");
+//document.write("<br>");
+//document.write("<br>");
+//document.write("<br>");
+
+//document.write("Genre: " + this.Genre + "<br>");
+document.write("<td>");
+document.write("Title: " + this.Title + "<br>");
+document.write("</td>");
+document.write("<td>");
+
+document.write("Rating: " + this.Rating + "<br>");
+document.write("</td>");
+document.write("<td>");
+document.write("Price: " + this.Price + "<br>");
+document.write("</td>");
+document.write("<td>");
+document.write("<img src='LivingRoom/" + this.image + "' width='150px' height='250px'/>")
+document.write("</td>");
+document.write("<td>");
+document.write("Shipment: " + this.shipment + "<br>");
+document.write("</td>");
+
+
+//document.body.appendChild(img);
+//document.write("Price: " + this.Price + "<br>");
+// document.write("Image" + img + "<br>");
+//document.write(<"img src='LivingRoom/" + this.image +"' >")
+
+//document.write("<br>");
+//document.write("<br>");
+//document.write("<br>");
+//document.write("<br>");
+
+
+}
+var Livingroom1 = new Categoryinventory("frame", "White frames which make wall more charming .All your personal pics in our frame charm and décor will give smile on your face", "$150", "frame.jpg", "Free Shipment");
+var Livingroom2 = new Categoryinventory("Wood frame", "Fabulous item which décor your living room and make it unique from other. All unique items are available here", "$250","ima.jpg", "Free shipment");
+var Livingroom3 = new Categoryinventory("Painting", "Look the frame give beautiful look in your living room", "$150", "Living Room2.jpg", "Free shipment for above $50");
+var Livingroom4 = new Categoryinventory("Lovely decor", "Gorgeous look for your living room", "$170", "First pic.jpg", "Free Shipment");
+
+Livingroom1.getClass = displayClass;
+Livingroom2.getClass = displayClass;
+Livingroom3.getClass = displayClass;	
+Livingroom4.getClass = displayClass;
+
+var AllLivingroom = new Array();
+AllLivingroom.push(Livingroom1);
+AllLivingroom.push(Livingroom2);
+AllLivingroom.push(Livingroom3);
+AllLivingroom.push(Livingroom4);
+AllLivingroom.getClass = displayClass;
+
+var ChandelierL1 = new Categoryinventory("Chandelier", "Superb chandelier for your living room", "$270", "ni.jpg","$25 shipment");
+var ChandelierL2 = new Categoryinventory("Crystal Chandelier", "Chandelier for making your house fabulous", "$225","c.jpg","$25 shipment");
+var ChandelierL3 = new Categoryinventory("New collection", "Chandelier for making your house fabulous", "$300", "new.jpg","Free shipment");
+var ChandelierL4 = new Categoryinventory( "Italian style Chandelier","Chandelier for living room", "$350", "n.jpg","Free shipment");
+
+ChandelierL1.getClass = displayClass;
+ChandelierL2.getClass = displayClass;
+ChandelierL3.getClass = displayClass;
+ChandelierL4.getClass = displayClass;
+var AllChandelierLs = new Array();
+AllChandelierLs.push(ChandelierL1);
+AllChandelierLs.push(ChandelierL2);
+AllChandelierLs.push(ChandelierL3);
+AllChandelierLs.push(ChandelierL4);
+AllChandelierLs.getClass = displayClass;
+
+var DiningD1 = new Categoryinventory("Dinning decor", "Frame  give different look to dining area", "$100", "Second pic 2.jpg","Free shipment");
+var DiningD2 = new Categoryinventory("Dinning chandellier with frame", "Frame and Chandelier décor bring fantastic feeling while enjoying delicious food", "$325","d.jpg","Free Shipment");
+var DiningD3 = new Categoryinventory("Crystal decor", "Frame and Chandelier décor makes dinning room more lively", "$475", "di.jpg","Free Shipment");
+var DiningD4 = new Categoryinventory("Dinning area wooden frame", "Frame and Chandelier décor brings gorgeous look", "$325", "din.jpg","Free shipment");
+
+DiningD1.getClass = displayClass;
+DiningD2.getClass = displayClass;
+DiningD3.getClass = displayClass;
+DiningD4.getClass = displayClass;
+var AllDiningDs = new Array();
+AllDiningDs.push(DiningD1);
+AllDiningDs.push(DiningD2);
+AllDiningDs.push(DiningD3);
+AllDiningDs.push(DiningD4);
+AllDiningDs.getClass = displayClass;
+
+var AllCategory = new Array(3);
+AllCategory[0] = AllLivingroom;
+AllCategory[1] = AllChandelierLs;
+AllCategory[2] = AllDiningDs;
+
+AllCategory.getClass = displayClass;
+
+var CatAll = new Array("LivingRoom", "Chandelier", "DiningRoom");
+//var CatAll = new Array(1, 2, 4);
+//CatAll.push(LivingRoom);
+//CatAll.push(Chandelier);
+//CatAll.push(DiningRoom);
+CatAll.getClass = displayClass;
+
+</script>
+	<table class="tabletag">
+	<col style="width:1%">
+	<col style="width:1%">
+	<col style="width:1%">
+	
+<script type="text/javascript">
+document.write("<td>");
+
+document.write("Category");
+document.write("</td>");
+document.write("<td>");
+document.write("Title")
+document.write("</td>");
+document.write("<td>");
+document.write("Description")
+document.write("</td>");
+document.write("<td>");
+document.write("Rates")
+document.write("</td>");
+document.write("<td>");
+document.write("Image")
+document.write("</td>");
+document.write("<td>");
+document.write("Shipment")
+document.write("</td>");
+document.write("</tr>");
+//document.write("Number of genres in the inventory: " + AllCategory.length + "<br>");	
+for (i=0; i<AllCategory.length; i++) {
+//document.write(CatAll[i]);
+document.write("<td>");
+document.write(CatAll[i]);
+//CatAll[i].getClass;
+//document.write("</td>");
+for (j=0; j<AllDiningDs.length; j++) {
+
+//document.write("<td>");
+//document.write(CatAll[i]);
+//document.write("<td>");
+
+AllCategory[i][j].getClass();
+//document.write("</td>");
+document.write("</tr>");
+document.write("<td>");
+}
+document.write("</tr>");
+
+
+
+}
+</script>
+</table>
+
+ </p>
+ <footer>
+ <nav>
+		<a href="index.html">Home</a>		
+		<a href="FAQS.html">FAQ's</a>
+		<a href="AboutUs.html">About Us</a>
+		<a href="WhatsNew.html">What's New </a>
+		<a href="Catalogofproduct.html">Catalog of product </a>
+		<a href="ProductInformation.html">Product Information </a>
+		<a href="CustomerService.html">Contact</a>			
+		</nav>
+ </footer>
+ 
+</body>
+</html>

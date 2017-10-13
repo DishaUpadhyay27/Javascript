@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DOM </title>
+<meta charset="utf-8">
+<style>
+	body
+	{
+	background-color:#ff884d;;
+	font-family:Calibri;
+	font-size:20px;
+	}
+	
+</style>
+</head>
+
+<script type="text/javascript">
+
+var reg_exp = /[A-Z]|[a-z]|[0-9]|[_]/;
+//var reg_exp2 = /^([^0-9]*)$/;
+var reg_exp2 = /[^0-9]+/;
+
+var reg_exp3 = /^[A-Z]+[a-z]+\s/;
+//var reg_exp4 = /#\b((\d)\1){5}.\d{1}/g;
+var reg_exp4 = /#\d{5}.\d{1}/;
+
+function checkString(Regexpression) {
+
+document.getElementById('output').innerHTML = "The text is: " + Regexpression ;
+
+//document.write("The text is: " + Regexpression + "<br><br>");
+//document.write("Match a string that contains at least one character in A-Z, a-z, 0-9 and _<br><br>");
+if (reg_exp.test(Regexpression)){
+document.getElementById('output1').innerHTML = "It's a match";
+//document.write("It's a match.<br><br>");
+} else {
+document.getElementById('output1').innerHTML = "No match";
+//document.write("No match.<br><br>");
+}
+
+//document.write("Match a string that does not contain a number between 0 and 9<br><br>")
+if (reg_exp2.test(Regexpression)){
+//document.write("It's a match.<br><br>");
+document.getElementById('output2').innerHTML = "It's a match";
+} else {
+//document.write("No match.<br><br>");
+document.getElementById('output2').innerHTML = "No match";
+}
+
+//document.write("Search for an uppercase letter, folowed by one or more lowercase letters, followed by a space<br><br>")
+if (reg_exp3.test(Regexpression)){
+//document.write("It's a match.<br><br>");
+document.getElementById('output3').innerHTML = "It's a match";
+} else {
+//document.write("No match.<br><br>");
+document.getElementById('output3').innerHTML = "No match";
+}
+
+//document.write("Find a # sign, followed by excatly 5 repeating digits, a period, and another digit<br><br>")
+if (reg_exp4.test(Regexpression)){
+//document.write("It's a match.<br><br>");
+document.getElementById('output4').innerHTML = "It's a match";
+} else {
+//document.write("No match.<br><br>");
+document.getElementById('output4').innerHTML = "No match";
+}
+}
+
+function getString () {
+var Regexpression = prompt("Enter a text (stop to exit)","stop");
+if (Regexpression != "stop"){
+checkString(Regexpression);
+getString();
+} else {
+checkString(Regexpression);
+exit(0);
+}
+}
+
+</script>		 
+
+<body onload="getString()">
+<h1 align="center"><u>Lab 12 - Regular Expression</u></h1>
+	
+    <p style="color:black;font-size:26px; text-align:center">	
+	<p id="output"> </p> 
+
+	<p> Match a string that contains at least one character in A-Z, a-z, 0-9 and _ </p> 
+	<p id="output1"> </p> 
+	
+	<p> Match a string that does not contain a number between 0 and 9 </p> 
+	<p id="output2"> </p> 
+
+	<p> Search for an uppercase letter, folowed by one or more lowercase letters, followed by a space </p> 
+	<p id="output3"> </p> 
+
+	<p> Find a # sign, followed by excatly 5 repeating digits, a period, and another digit </p>
+	<p id="output4"> </p> <br>
+
+	
+</body>
+</html>
+

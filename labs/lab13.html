@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DOM </title>
+<meta charset="utf-8">
+<style>
+	body
+	{
+	background-color:#ff884d;;
+	font-family:Calibri;
+	font-size:20px;
+	background-repeat: no-repeat;
+	background-size: 100%,100%;
+	background-image: url("Image/clock.jpg");
+
+	
+
+		}
+#myDiv{
+color:white;
+ width: 70%;
+ padding:10px;
+   height: 540px;
+   border: 15px solid black;
+   	border-align:center;
+   border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    text-align:center;
+	margin-right: 5px;
+	 padding-top: 4cm;
+}
+</style>
+</head>
+
+<script type="text/javascript">
+
+function changeColor() {
+var num1 = Math.random() * 256;
+var color1 = Math.floor(num1);
+//var color1 = Math.ceil(num1); no 0
+
+var num2 = Math.random() * 256;
+var color2 = Math.floor(num2);
+
+var num3 = Math.random() * 256;
+var color3 = Math.floor(num3);
+
+var num4 = color1.toString(16);
+var num5 = color2.toString(16);
+var num6 = color3.toString(16);
+
+if ( num4.length < 2) {
+var hex1 = "0" + num4;
+} else {
+var hex1 = num4;
+}
+
+if ( num5.length < 2) {
+var hex2 = "0" + num5;
+} else {
+var hex2 = num5;
+}
+
+if ( num6.length < 2) {
+var hex3 = "0" + num6;
+} else {
+var hex3 = num6;
+}
+
+var finalhex = "#" + hex1 + hex2 + hex3;
+document.getElementById('rgb').innerHTML = "RGB(" + color1 + "," + color2 + "," +  color3 + ")" ;
+document.getElementById('hex').innerHTML = "HEX: " + finalhex ;
+document.getElementById("myDiv").style.backgroundColor = finalhex;
+}
+
+</script>		 
+
+<body onload="changeColor()">
+<h1 align="center"><u>Lab 13 - Math</u></h1>
+	
+    <p style="color:black;font-size:26px; text-align:center">	
+<div id="myDiv" onclick="changeColor()"> 
+	<p> BACKGROUND-COLOR IS RANDOMLY GENERATED </p> 
+	<p id="rgb"> </p> 
+	<p id="hex"> </p> 
+	<a href=javascript:changeColor()"> CLICK HERE TO GENERATE RANDOM COLOR </a> 
+</div>	
+</body>
+</html>
+

@@ -1,0 +1,176 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Lab9 - Creating documentlocation</title>
+	<style type ="text/css">
+	body
+	{
+	background-color:#ff884d;
+	font-family:Calibri;
+	font-size:20px;
+	background-repeat: no-repeat;
+	background-size: 100%,100%;
+	background-image: url("Image/goldengate.jpg");
+	
+	}
+	
+		article
+		{
+			width: 10%;
+			margin: 10px 10px 10px 10px;
+		}
+		h1
+		{
+			color: pink;
+			font-size:40px;
+			text-shadow: 1px 1px black;
+			
+			
+		}	
+		.tabletag 
+		{
+			font-family: verdana, arial, sans-serif;
+			font-align :center
+			border-width: 5px;
+			border-color: #6ba535;
+			border-collapse: collapse;
+			margin-left:0px;
+			margin-right:0px;
+			background-attachment : fixed; 
+			color: yellow;
+			  font-size: 20px;
+			
+
+			
+		.tabletag th 
+		{
+			border: 4px solid red;
+			padding: 1px;
+			text-align:center;
+			 width: 10%;
+			 height: 20px;
+			 color: yellow;
+			   font-size: 20px;
+			 
+		}
+ 
+		.tabletag td 
+		{
+			border: 4px solid black;
+			padding: 2px;	
+			text-align:center;
+			width: 10%;
+			 height: 20px;
+			 color: yellow;
+			  font-size: 20px;
+			
+		}	
+</style>
+</head>
+<nav>
+</nav>
+
+<body>
+<script type="text/javascript">
+
+
+var myWin=window.open('', '',"height=1200,width=1200,top=0,left=0,resizable");
+
+//screen Object 
+myWin.document.write("<p><b><u>The screen</u></b></p>");
+myWin.document.write("availHeight = " + screen.availHeight);
+myWin.document.write("<br>");
+myWin.document.write("availLeft = " + screen.availLeft);
+myWin.document.write("<br>");
+myWin.document.write("availTop = " + screen.availTop);
+myWin.document.write("<br>");
+myWin.document.write("availWidth = " + screen.availWidth);
+myWin.document.write("<br>");
+myWin.document.write("colorDepth = " + screen.colorDepth);
+myWin.document.write("<br>");
+myWin.document.write("height = " + screen.height);
+myWin.document.write("<br>");
+myWin.document.write("pixelDepth = " + screen.pixelDepth);
+myWin.document.write("<br>");
+myWin.document.write("width = " + screen.width);
+myWin.document.write("<br>");
+var height1 = screen.availHeight;
+var width1 = screen.availWidth;
+var newHeight = height1 / 3;
+var newWidth = width1 / 3;
+function display() {
+  myWin.resizeTo(newWidth,newHeight);
+}
+
+function Update() {
+// myWin.document.write("Welcome. This is an example of using setTimeout.");
+ setTimeout(display,6000);
+}
+Update();
+//properties
+
+myWin.document.write(" <br><br> <p><u> Navigator Detail Below </u></p>");
+myWin.document.write("The appCodeName is: " + navigator.appCodeName);
+myWin.document.write("<br>");
+
+myWin.document.write("The appName is: " + navigator.appName); 
+myWin.document.write("<br>");
+
+myWin.document.write("The appVersion is: " + navigator.appVersion);
+myWin.document.write("<br>");
+
+myWin.document.write("The cookieEnabled: " + navigator.cookieEnabled);
+myWin.document.write("<br>");
+
+myWin.document.write("The language is: " + navigator.language);
+myWin.document.write("<br>");
+
+myWin.document.write("The browser onLine: " + navigator.onLine);
+myWin.document.write("<br>");
+
+myWin.document.write("The platform is: " + navigator.platform); 
+myWin.document.write("<br>");
+
+myWin.document.write("The plugins is: " + navigator.plugins); 
+myWin.document.write("<br>");
+
+myWin.document.write("The userAgent is: " + navigator.userAgent);
+myWin.document.write("<br>");
+myWin.document.write("<br>");
+ 
+ 
+//mime types
+myWin.document.write("<br><br> <p><u> mimeTypes Detail Below </u></p> ");
+
+myWin.document.write("MimeTypes length: " + navigator.mimeTypes.length + "<br>");
+for (var i=0; i<navigator.mimeTypes.length; i++) {
+myWin.document.write("description: " + navigator.mimeTypes[i].description + "<br>");
+myWin.document.write("plugin: " + navigator.mimeTypes[i].enabledPlugin + "<br>");
+myWin.document.write("type: " + navigator.mimeTypes[i].type + "<br>");
+myWin.document.write("suffixes: " + navigator.mimeTypes[i].suffixes + "<br>");
+}
+
+//plugins
+myWin.document.write("<br><br> <p><u> plugins Detail Below </u></p> ");
+
+myWin.document.write("Plugins length: " + navigator.plugins.length + "<br>");
+for (var i=0; i<navigator.plugins.length; i++) {
+myWin.document.write("name: " + navigator.plugins[i].name + "<br>");
+myWin.document.write("filename: " + navigator.plugins[i].filename + "<br>");
+myWin.document.write("description: " + navigator.plugins[i].description + "<br>");
+myWin.document.write("length: " + navigator.plugins[i].length + "<br>");
+}
+
+//color
+myWin.document.bgColor = "purple";
+myWin.document.fgColor = "white";
+</script>
+
+ </p>
+ 
+
+    <h1 align="center"><u>Lab 9 Creatingdocumentlocation</u></h1>
+	<p style="color:white; font-size:26px; text-align:center">
+	
+</body>
+</html>

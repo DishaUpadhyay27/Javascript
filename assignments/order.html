@@ -1,0 +1,448 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="utf-8" /> 
+<title>Order Form</title>
+	<style type ="text/css">
+
+body{
+	padding:0;
+	margin:0;
+	text-font-family: Verdana;
+	background-color:yellow;
+	  	}
+	.container{
+		width:960px;
+		margin-left:auto;
+		margin-right:auto;
+		background:#ffff;
+			}
+			h1{
+  
+	color:Purple;
+	text-align :center;
+	font-size: 27px;
+	padding-top:40px;
+	
+}
+header{
+   	width:100%;
+	height:100px;
+	background-color:white;
+	text-align :center;
+	font-size: 15px;
+}
+header1{
+	color:White;
+	padding:20px;
+	text-align:center;
+	font-size:15px;
+	}
+nav{
+	text-align: center;
+	background-color:green;
+	height: 80px;
+	width:100%;
+ font-size: 22px;
+}	
+nav a{
+	text-decoration: none;
+	color: fff;
+	margin-right: 5px;
+	padding: 5px;
+	line-height: 2.1em;
+	}
+nav a :hover{
+	background: #666;
+	}
+section{
+	width : 100%
+	padding: 5x;
+}	
+Footer{
+	text-align: center;
+	background-color:green;
+	height: 80px;
+	width:100%;
+ font-size: 27px;
+}	
+		.aligntable
+		{
+		border: 3px solid green;
+		text-align:center;
+		width: 10%;
+		height: 9%;
+		 font-size: 27px;
+	     padding:20px;  
+		  margin-left: 2cm;
+	  	background: white;
+		border-radius:3px;
+		background-color:#ffe6e6;
+		padding-left:20px;		
+	  	padding-top: 25px;
+		margin: 0 auto;
+	    margin-bottom: 10px;
+
+		
+		
+		}	
+		
+	.allbutton 
+		{
+		background-color:#ffe6e6;
+			color:black;
+			font-size: 27px;
+			border:2px solid black;
+		 border-radius:2px;
+		margin: 250px ;
+		padding:10px; 
+        padding-left:10px;		
+	  	padding-top: 15px;
+		margin: 0 auto;
+	    width: 10%;
+		height: 3%;
+		 margin-bottom: 10px;
+		  margin-left: 9cm;
+
+		}
+		
+		#myCalc 
+		{
+		border: 4px solid green;
+		text-align:center;
+		width: 40%;
+		color: yellow;
+		font-size: 20px;
+		padding:40px; 
+        padding-left:20px;		
+	  	padding-top: 25px;
+		margin: 0 auto;
+	    margin-bottom: 10px;
+	    height:60%;
+	   border-radius: 20px;
+	   box-shadow: 4px 4px 25px 5px 	#ffff00;
+	   }
+			
+		
+		
+</style>
+</head>
+<nav>
+<div class "container"
+     		<h1>Fabulous Decor</h1>
+		</header>
+		<nav>
+	<a href="index.html">Home</a>		
+		<a href="FAQS.html">FAQ's</a>
+		<a href="AboutUs.html">About Us</a>
+		<a href="WhatsNew.html">What's New </a>
+		<a href="Catalogofproduct.html">Catalog of product </a>
+		<a href="ProductInformation.html">Product Information </a>
+		<a href="Employmentpage.html">Employment Page </a>
+		<a href="CustomerService.html">Contact</a>	
+		<a href="what'sNewpage.html">What's New page</a>	
+		<a href="order.html">Order Form</a>	
+		
+		</nav>
+</nav>
+
+<body>
+    <h1 align="center"><u>Order Form</u></h1>
+	
+<div id="myCalc1">
+<form name="myForm" method="post" id="payment" action="http://voyager.deanza.edu/~hso/cgi-bin/form420.cgi" onsubmit="return checkForm(this)"  novalidate>
+<fieldset>
+<label for="first"> First Name </label>
+<input type="text" name="first" id="first" maxlength="50" size="30"> <br>
+<label for="last"> Last Name </label>
+<input type="text" name="last" id="last" maxlength="50" size="30"> <br>
+<label for="address"> Street Address </label>
+<input type="text" id="address" name="address" maxlength="10" size="30"> </textarea> <br>
+<label for="city"> City </label>
+<input type="text" name="city" id="city" maxlength="30" size="30"> <br>
+<label for="state"> State </label>
+<input type="text" name="state" id="state" maxlength="2" size="30"> <br>
+<label for="zip"> Zip </label>
+<input type="text" name="zip" id="zip" maxlength="10" size="30"> <br>
+<label for="phone"> Telephone number </label>
+<input type="tel" name="phone" id="phone" maxlength="13" size="30"> <br>
+<label for="email" >EMail </label>
+<input type="email" name="email" id="email" maxlength="60"size="30"> <br>
+<label for="ccnum"> Credit Card Number </label>
+<input type="text" name="ccnum" id="ccnum" maxlength="16" size="30"> <br>
+<label for="cctype"> List of Credit Card Type </label>
+<select name="cctype">
+<option value="Master Card"> Master Card</option>
+<option value="Visa" selected> Visa</option>
+<option value="American"> American Express</option>
+</select> <br>
+<label for="ccexpire"> Credit Card Expiration Date </label>
+<input type="text" name="ccexpire" id="ccexpire" maxlength="7" size="30"> <br>
+<label for="comment"> Comment </label>
+<textarea name="comment" rows="8" cols="50" size="30"></textarea> <br>
+</fieldset> <br>
+
+
+<!-- Table Below -->
+<!-- <div id="myCalc"> -->
+<table align="center" class="aligntable" border="all" cellpadding="10" cellspacing="5">
+<tr>
+<td>Category</td>
+<td>Description</td>
+<td>Unit Price</td>
+<td>Quantity</td>
+<td>Total Price</td>
+</tr>
+<tr align="left">
+<td rowspan="2">Home Decor</td>
+<td>Painting & Frames</td>
+<td>$10</td>
+<td><input type="text" name="quantity11" oninput="getTotal()"></td>
+<td><input type="text" name="total11"></td>
+</tr>
+<tr align="left">
+<td>Chandelier</td>
+<td>$30</td>
+<td><input type="text" name="quantity12" oninput="getTotal()"></td>
+<td><input type="text" name="total12"></td>
+</tr>
+<tr align="right">
+<td colspan="4">Subtotal $</td>
+<td><input type="text" name="subtotal1"></td>
+</tr>
+<tr align="left">
+<td rowspan="2">Charming decor</td>
+<td>Show pieces</td>
+<td>$10</td>
+<td><input type="text" name="quantity21" oninput="getTotal()"></td>
+<td><input type="text" name="total21"></td>
+</tr>
+<tr align="left">
+<td>Soverginer Holder</td>
+<td>$20</td>
+<td><input type="text" name="quantity22" oninput="getTotal()"></td>
+<td><input type="text" name="total22"></td>
+</tr>
+<tr align="right">
+<td colspan="4">Subotal $</td>
+<td><input type="text" name="subtotal2"></td>
+</tr>
+<tr align="left">
+<td rowspan="2">Elegant Look</td>
+<td>Rug</td>
+<td>$60</td>
+<td><input type="text" name="quantity31" oninput="getTotal()"></td>
+<td><input type="text" name="total31"></td>
+</tr>
+<tr align="left">
+<td>Flower Vase with coffee table</td>
+<td>$90</td>
+<td><input type="text" name="quantity32" oninput="getTotal()"></td>
+<td><input type="text" name="total32"></td>
+</tr>
+<tr align="right">
+<td colspan="4">Subotal $</td>
+<td><input type="text" name="subtotal3"></td>
+</tr>
+<tr align="right">
+<td colspan="4">Total $</td>
+<td><input type="text" name="total1"></td>
+<tr>
+<tr align="right">
+<td colspan="4">Sales Tax (8.25%) $</td>
+<td><input type="text" name="salestax"></td>
+</tr>
+<tr align="right">
+<td colspan="4">Total $</td>
+<td><input type="text" name="total2"></td>
+</tr>
+<tr align="right">
+<td colspan="4">Shipping and Handling $</td>
+<td><input type="text" name="sandh"></td>
+</tr>
+<tr align="right">
+<td colspan="4">Grand Total $</td>
+<td><input type="text" name="grandtotal"></td>
+</tr>
+</table>
+<td> <input type="submit" value="Submit" name="submit" class="allbutton"> </td>
+<td> <input type="reset" value="Reset" name="reset" class="allbutton"> </td>
+</form>
+</div>
+	
+<script type="text/javascript">
+
+function checkEachTerm (name, message) {
+alert (message);
+name.focus();
+name.select();
+//return false;
+}
+var reg_zip1 = /^(\d{5})$/;
+var reg_zip2 = /^(\d{5}-\d{4})$/;
+var reg_tel = /^\((\d{3}\)\d{3}-\d{4})$/;
+var reg_exp_cc = /^(\d{16})$/;
+var reg_exp_cexp = /^(\d{2}\/\d{4})$/;
+
+function checkForm (form) {
+
+function checkExpVal () {
+var today = new Date();
+var expp = new Date();
+var eEnter = form.ccexpire.value;
+var yy = today.getFullYear();
+var mm = today.getMonth();
+var emmyy = eEnter.split("/");
+var emm = emmyy[0];
+var eyy = emmyy[1];
+expp.setMonth(emmyy[0]);
+expp.setFullYear(emmyy[1]);
+if (today < expp) {
+return true;
+} else {
+return false;
+}
+}
+if (form.first.value == "" || form.first.value.length == 0) {
+checkEachTerm(form.first, "Enter First Name");
+return false;
+} else if (form.last.value == "" || form.last.value.length == 0) {
+checkEachTerm(form.last, "Enter Last Name");
+return false;
+} else if (form.address.value == "" || form.address.value.length == 0) {
+checkEachTerm(form.address, "Enter Street Address");
+return false;
+} else if (form.city.value == "" || form.city.value.length == 0) {
+checkEachTerm(form.city, "Enter City");
+return false;
+} else if (form.state.value == "" || form.state.value.length == 0) {
+checkEachTerm(form.state, "Enter State");
+return false;
+} else if (form.zip.value == "" || form.zip.value.length == 0 || (reg_zip1.test(form.zip.value) == 0 && reg_zip2.test(form.zip.value) == 0) ) {
+checkEachTerm(form.zip, "Enter Zip with 5 or 9 digit with format xxxxx or xxxxx-xxxx");
+return false;
+} else if (form.phone.value == "" || form.phone.value.length == 0 || reg_tel.test(form.phone.value) == 0) {
+checkEachTerm(form.phone, "Enter Telephone number with format (xxx)xxx-xxxx");
+return false;
+} else if (form.email.value == "" || form.email.value.length == 0) {
+checkEachTerm(form.email, "Enter EMail");
+return false;
+} else if ((form.ccnum.value == "" || form.ccnum.value.length == 0 || form.ccnum.value.length < 16 || form.ccnum.value.length > 16 || reg_exp_cc.test(form.ccnum.value) == 0)) {
+checkEachTerm(form.ccnum, "Enter Credit Card Number with 16 digit");
+return false;
+} else if ((form.ccexpire.value == "" || form.ccexpire.value.length == 0 || reg_exp_cexp.test(form.ccexpire.value) == 0 || checkExpVal() == false)) {
+checkEachTerm(form.ccexpire, "Enter Credit Card expiration date with format mm/yyyy");
+return false;
+} else if (form.comment.value == "" || form.comment.value.length == 0) {
+checkEachTerm(form.comment, "Enter Comments");
+return false;
+} else if (document.forms[0].quantity11.value == "" && document.forms[0].quantity12.value == "" && document.forms[0].quantity21.value == "" && document.forms[0].quantity22.value == "" && document.forms[0].quantity31.value == "" && document.forms[0].quantity32.value == "" ) {
+alert ("Enter one quantity");
+document.forms[0].quantity11.focus();
+document.forms[0].quantity11.select();
+return false;
+}
+}
+
+
+function getTotal () {
+var p11 = 10;
+var p12 = 30;
+var p21 = 10;
+var p22 = 20;
+var p31 = 60;
+var p32 = 90;
+
+var cnt = 0;
+var t11 = 0;
+var t12 = 0;
+var t21 = 0;
+var t22 = 0;
+var t31 = 0;
+var t32 = 0;
+var sub1 = 0;
+var sub2 = 0;
+var sub3 = 0;
+var t1 = 0;
+var st = 0;
+var t2 = 0;
+var sh = 0;
+var gt = 0;
+if (document.forms[0].quantity11.value != "") {
+var q11 = document.forms[0].quantity11.value;
+t11 = q11 * p11;
+document.forms[0].total11.value = t11;
+cnt = cnt + 1;
+}
+if (document.forms[0].quantity12.value != "") {
+var q12 = document.forms[0].quantity12.value;
+t12 = q12 * p12;
+document.forms[0].total12.value = t12;
+cnt = cnt + 1;
+}
+if (document.forms[0].quantity21.value != "") {
+var q21 = document.forms[0].quantity21.value;
+t21 = q21 * p21;
+document.forms[0].total21.value = t21;
+cnt = cnt + 1;
+}
+if (document.forms[0].quantity22.value != "") {
+var q22 = document.forms[0].quantity22.value;
+t22 = q22 * p22;
+document.forms[0].total22.value = t22;
+cnt = cnt + 1;
+}
+if (document.forms[0].quantity31.value != "") {
+var q31 = document.forms[0].quantity31.value;
+t31 = q31 * p31;
+document.forms[0].total31.value = t31;
+cnt = cnt + 1;
+}
+if (document.forms[0].quantity32.value != "") {
+var q32 = document.forms[0].quantity32.value;
+t32 = q32 * p32;
+document.forms[0].total32.value = t32;
+cnt = cnt + 1;
+}
+sub1 = t11 + t12;
+sub2 = t21 + t22;
+sub3 = t31 + t32;
+t1 = sub1 + sub2 + sub3;
+st = t1 * 0.0825;
+t2 = t1 + st;
+if (t2 != 0) {
+sh = 25;
+}
+gt = t2 + sh;
+//Will not work so need to use variables and cannot just add or multply
+//document.forms[0].subtotal1.value = document.forms[0].total11.value + document.forms[0].total12.value;
+document.forms[0].subtotal1.value = sub1;
+document.forms[0].subtotal2.value = sub2;
+document.forms[0].subtotal3.value = sub3;
+document.forms[0].total1.value = t1;
+document.forms[0].salestax.value = st;
+document.forms[0].total2.value = t2;
+document.forms[0].sandh.value = sh;
+document.forms[0].grandtotal.value = gt;
+}
+</script>
+<footer>
+
+	<a href="index.html">Home</a>		
+		<a href="FAQS.html">FAQ's</a>
+		<a href="AboutUs.html">About Us</a>
+		<a href="WhatsNew.html">What's New </a>
+		<a href="Catalogofproduct.html">Catalog of product </a>
+		<a href="ProductInformation.html">Product Information </a>
+		<a href="Employmentpage.html">Employment Page </a>
+		<a href="CustomerService.html">Contact</a>	
+		<a href="what'sNewpage.html">What's New page</a>	
+		<a href="order.html">Order Form</a>	
+	<br></br>
+	Disha Upadhyay R-CITY MALL GHATKOPAR (W), MUMBAI,91 22 4085716342
+	
+		
+</footer>
+
+</body>
+</html>

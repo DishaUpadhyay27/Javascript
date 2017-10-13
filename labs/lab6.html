@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Lab6 - Array</title>
+	<style type ="text/css">
+	body
+	{
+	background-color:#ff884d;
+	font-family:Calibri;
+	font-size:20px;
+	}
+	
+</style>
+</head>
+<nav>
+</nav>
+
+<body>
+
+    <h1 align="center"><u>Lab6 Array</u></h1>
+	<p style="color:black; font-size:26px; text-align:center">
+	<h2 align="center">Movies Inventory</h2>
+	<p style="color:black; font-size:36px; text-align:center">	
+<script type="text/javascript">
+function Moviesinventory(the_Genre,the_Title,the_Rating,the_Price,the_image){
+this.Genre = the_Genre;
+this.Title = the_Title;
+this.Rating = the_Rating;
+this.Price = the_Price;
+this.image = the_image;
+}
+
+
+function displayClass() {
+document.write("<br>");
+document.write("<br>");
+document.write("Genre: " + this.Genre + "<br>");
+document.write("Title: " + this.Title + "<br>");
+document.write("Rating: " + this.Rating + "<br>");
+document.write("Price: " + this.Price + "<br>");
+document.write("<img src='Image/" + this.image + "' width='450px' height='450px'/>")
+
+//document.body.appendChild(img);
+//document.write("Price: " + this.Price + "<br>");
+// document.write("Image" + img + "<br>");
+//document.write(<"img src='Image/" + this.image +"' >")
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+
+}
+
+var Movie1 = new Moviesinventory("Adventure/Science Fiction", "Interstellar", "PG-13", "$12.45","Interstellar.jpg");
+var Movie2 = new Moviesinventory("Action", "Spectre", "PG-13", "$12.99","Spectre.jpg");
+var Movie3 = new Moviesinventory("Adventure/Science Fiction", "Ironman", "PG-13", "$11.49", "ironman.jpg");
+Movie1.getClass = displayClass;
+Movie2.getClass = displayClass;
+Movie3.getClass = displayClass;
+var Allmovies = new Array();
+Allmovies.push(Movie1);
+Allmovies.push(Movie2);
+Allmovies.push(Movie3);
+Allmovies.getClass = displayClass;
+</script>
+
+<script type="text/javascript">
+
+document.write("Number of movies in inventory: " + Allmovies.length + "<br>");
+
+Movie1.getClass();
+Movie2.getClass();
+Movie3.getClass();
+document.write("Pop and display popped movies" + "<br>");
+var MoviePop1 = Allmovies.pop();
+document.write("Number of movies in inventory: " + Allmovies.length + "<br>");
+MoviePop1.getClass();
+
+document.write("Pop another one and display the popped movies" + "<br>");
+var MoviePop2 = Allmovies.pop();
+document.write("Number of movies in inventory: " + Allmovies.length + "<br>");
+MoviePop2.getClass();
+
+document.write("Unshift the last popped movie and display the inventory" + "<br>");
+
+var movieunshift = Allmovies.unshift(MoviePop2);
+Movie1.getClass();
+Movie2.getClass();
+
+document.write("Do another pop another and display the popped movies" + "<br>");
+var MoviePop3 = Allmovies.pop();
+document.write("Number of movies in inventory: " + Allmovies.length + "<br>");
+MoviePop3.getClass();
+
+Movie1.getClass();
+
+document.write("Push the first popped and display the inventory" + "<br>");
+var MoviePush1 = Allmovies.push(MoviePop1);
+Movie1.getClass();
+Movie2.getClass();
+
+document.write("Number of movies in inventory: " + Allmovies.length + "<br>");
+document.write("Shift and display the shift movie" + "<br>");
+var movieshift = Allmovies.shift();
+movieshift.getClass();
+
+document.write("Number of movies in inventory: " + Allmovies.length + "<br>");
+Movie1.getClass();
+
+</script>
+ </p>
+</body>
+</html>

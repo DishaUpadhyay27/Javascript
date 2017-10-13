@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        body
+        {            
+            background-image: url("image/image.jpg");
+			background-size : 100% 100%;
+			background-attachment : fixed;
+			        }
+		article
+		{
+			width: 80%;
+			margin: 30pxpx auto auto auto;
+		}
+		h1
+		{
+			color: green;
+			font-size:40px;
+			text-shadow: 1px 1px black;
+		}	
+		.tabletag 
+		{
+			border-width: 4px;
+			border-color: #6ba535;
+			border-collapse: collapse;
+			margin-left:auto;
+			margin-right:auto;			
+		}
+ 
+		.tabletag th 
+		{
+			border: 4px solid red;
+			padding: 20px;
+			background-color: #dec77a;
+		}
+ 
+		.tabletag td 
+		{
+			border: 4px solid black;
+			padding: 14px;	
+			background-color: #aaaccc;
+		}	
+</style>
+
+    <script type="text/javascript">
+	<!-- ! 1.00 EURO = 1.117 USD, Source: http://www.x-rates.com/calculator/?from=EUR&to=USD&amount=1 >
+	
+	var conv_rate = 1.117;
+	
+	var liquidityamount = 1000;
+	
+	var EUROHOTELCOST = 150;
+	var EUROCAR = 30, EUROSHOPPING_AND_NIGHTLIFECOST = 75, EUROFOOD = 200, EURO_MURANO_GLASS_FACTORY = 50;
+	var num_days = 2; 
+	var EUROMUSEUMCOST = 50;
+	
+	var num_Euroshopping_and_Night_Life = 3;
+	
+	var EUROHOTEL = EUROHOTELCOST * num_days;
+	var EUROSHOPPING_AND_NIGHTLIFE = EUROSHOPPING_AND_NIGHTLIFECOST * num_days;
+	var EUROMUSEUM = EUROMUSEUMCOST * num_days ;
+	
+	var USDHOTEL = EUROHOTEL * conv_rate;
+	var USDCAR = EUROCAR * conv_rate;
+	var USDSHOPPING_AND_NIGHTLIFE = EUROSHOPPING_AND_NIGHTLIFE * conv_rate;
+	var USDMUSEUM = EUROMUSEUM * conv_rate;
+	var USDFOOD= EUROFOOD * conv_rate;
+	var USD_MURANO_GLASS_FACTORY = EURO_MURANO_GLASS_FACTORY * conv_rate;
+
+	var totalEURO = EUROHOTEL + EUROCAR + EUROSHOPPING_AND_NIGHTLIFE + EUROFOOD + EURO_MURANO_GLASS_FACTORY + EUROMUSEUM;
+	var totalUSD = USDHOTEL + USDCAR + USDSHOPPING_AND_NIGHTLIFE + USDFOOD + USD_MURANO_GLASS_FACTORY + USDMUSEUM;
+	
+	var TOTALBALEURO = liquidityamount / conv_rate - totalEURO;
+	var TOTALBALUSD = liquidityamount - totalUSD;
+    </script>
+
+</head>
+ 
+<body>
+<article>
+	<h1 align = "center"> <b>Europe Trip:<b> <span style="color:lightblue"><u>Venice Italy</u></span></h1></caption>
+    <table class="tabletag">
+	<col style="width:40%">
+	<col style="width:25%">
+	<col style="width:25%">
+	
+        <thead>
+            <tr>
+                <th>DESCRIPTION</th>
+                <th> EURO </th>
+                <th> USD </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hotel</td>
+                <td><script>document.write(EUROHOTEL)</script></td>
+                <td><script>document.write(USDHOTEL)</script></td>
+            </tr>
+            <tr>
+                <td>Car</td>
+                <td><script>document.write(EUROCAR)</script></td>
+                <td><script>document.write(USDCAR)</script></td>
+            </tr>
+            <tr>
+                <td>Shopping AND Night Life</td>
+                <td><script>document.write(EUROSHOPPING_AND_NIGHTLIFE)</script></td>
+                <td><script>document.write(USDSHOPPING_AND_NIGHTLIFE)</script></td>
+            </tr>
+            <tr>
+                <td>food</td>
+                <td><script>document.write(EUROFOOD)</script></td>
+                <td><script>document.write(USDFOOD)</script></td>
+            </tr>
+            <tr>
+                <td>Murano Glass Factory</td>
+                <td><script>document.write(EURO_MURANO_GLASS_FACTORY)</script></td>
+                <td><script>document.write(USD_MURANO_GLASS_FACTORY)</script></td>
+            </tr>  
+			 <tr>
+                <td>Museum</td>
+                <td><script>document.write(EUROMUSEUM)</script></td>
+                <td><script>document.write(USDMUSEUM)</script></td>
+            </tr>
+            <tr>
+                <td><b>TOTAL</t></td>
+                <td><script>document.write(totalEURO)</script></td>
+                <td><script>document.write(totalUSD)</script></td>
+            </tr>
+            <tr>
+                <td>BALANCE (INITIAL EURO:895.25, USD:1000)</td>
+                <td><script>document.write(TOTALBALEURO)</script></td>
+                <td><script>document.write(TOTALBALUSD)</script></td>
+            </tr>
+        </tbody>
+</table>
+</article>
+</body>
+ 
+</html>

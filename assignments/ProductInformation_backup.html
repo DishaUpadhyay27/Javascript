@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+<head> 
+<meta charset="utf-8" /> 
+<title>Products Information</title> 
+
+<script type="text/javascript"> 
+function Products(_name, _image, _description) { 
+this.name = _name; 
+this.image = _image; 
+this.description = _description; 
+this.dispalyProductnfo = dispalyProduct; 
+} 
+
+function dispalyProduct() { 
+var strContent = ""; 
+
+strContent = "<table class='product'><tr>" 
++ "<td class='tdspace'>&nbsp;</td>" 
++ "<td class='td1'><img src='images//" + this.image + "' /></td>" 
++ "<td class='td2'><span>" + this.name + "</span> <p>" + this.description + "</p></td></tr></table> "; 
+document.write(strContent); 
+} 
+
+function createProduct1() { 
+var product1 = new Products("Living room frames", "product1.jpg", "A small triangular pastry filled with spiced meat or vegetables and fried in ghee or oil.crisp and golden, gram flour batter coated vegetable fritters or vegetable pakoras."); 
+product1.dispalyProductnfo(); 
+} 
+
+function createProduct2() { 
+var product2 = new Products("Master bedroom frames", "product2.jpg", "crisp and golden, gram flour batter coated spinach fritters or palak pakoras. here each spinach leaf is dipped in a spiced gram flour batter and then fried. Spinach dipped in chip-pea batter and deep fried"); 
+product2.dispalyProductnfo(); 
+} 
+
+function createProduct3() { 
+var product3 = new Products("Chandelier", "product5.jpg", "Indian dish made from chunks of paneer marinated in spices and grilled in a tandoor. Home made‏ creamy sauce. Tikka dishes traditionally go well with mint chutney"); 
+product3.dispalyProductnfo(); 
+} 
+
+function createProduct4() { 
+var product4 = new Products("Kids room frames", "product6.jpg", "Home made cheese cooked with onion, bell pepper with thick gravy made up of cream, tomatoes and spices. This shahi paneer recipe uses cashew nut based tomato gravy to bring in the rich texture and flavor."); 
+product4.dispalyProductnfo(); 
+} 
+
+function selectProduct() { 
+var firstName = prompt("Please enter First Name:"); 
+var lastName = prompt("Please enter Last Name:"); 
+alert("Welcome " + firstName + " " + lastName + ""); 
+displayProductFunction(); 
+} 
+
+function displayProductFunction() { 
+lastName = parseInt(prompt("Please enter Your Selection:\n\t 1 : Living room frames  \n\t 2: Master bedroom frames \n\t 3: Chandelier \n\t 4: Kids room frames\n")); 
+switch (lastName) { 
+case 1: 
+createProduct1(); 
+break; 
+case 2: 
+createProduct2(); 
+break; 
+case 3: 
+createProduct3(); 
+break; 
+case 4: 
+createProduct4(); 
+break; 
+default: 
+document.write("<p>No Product is Found for that Selection!</p>"); 
+break; 
+} 
+
+if (lastName <= 4) { 
+var checkAgain = confirm("Are you still want to see any other product Information?"); 
+if (checkAgain == true) { 
+displayProductFunction(); 
+} 
+
+} 
+
+
+} 
+</script> 
+</head> 
+<body> 
+<div class="bodyContent"> 
+<header class="header"> 
+<hr size="2" noshade /> 
+<div class="headerDiv1"> 
+<a href="index.html" tabindex="1" accesskey="h" title="Home" class="imgA"> 
+
+<img src="images//Logo.JPG" href="index.html" /> 
+
+</a> 
+</div> 
+<div class="headerDiv2"> 
+<nav> 
+<div class="menuHeading"> 
+<p> 
+<ul> 
+<li><a href="index.html" title="Home" tabindex="1" accesskey="h">Home</a></li> 
+
+<li><a href="products.html" title="Products Information" tabindex="5" accesskey="c">Products Information</a></li> 
+<li><a href="faq.html" title="FAQ" tabindex="2" accesskey="f">FAQ</a></li> 
+
+<li><a href="new.html" title="What's New" tabindex="3" accesskey="n">What's New</a></li> 
+
+<li><a href="about.html" title="About Us" tabindex="4" accesskey="a">About Us</a></li> 
+
+<li><a href="customerService.html" title="Customer Service" tabindex="5" accesskey="c">Customer Service</a></li> 
+
+</ul> 
+</p> 
+</div> 
+</nav> 
+<hr size="2" noshade style="clear:both;" /> 
+</div> 
+</header> 
+<section class="main"> 
+<article class="mainContent"> 
+<h2 class="headingStyleH2">Product Information</h2> 
+<blockquote> 
+<p class="spanColor2">Bring some color and life to your next meal!</p> 
+</blockquote> 
+
+<script type="text/javascript"> 
+selectProduct() 
+</script> 
+</article> 
+</section> 
+
+<footer> 
+
+</footer> 
+</div> 
+
+</body> 
+</html>

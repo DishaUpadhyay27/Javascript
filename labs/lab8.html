@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Lab8- Window </title>
+	<style type ="text/css">
+	body
+	{
+	background-color:#ff884d;
+	font-family:Calibri;
+	font-size:20px;
+	background-image: url("Image/wolf.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	color:yellow;
+	
+	}
+	
+		article
+		{
+			width: 10%;
+			margin: 10px 10px 10px 10px;
+		}
+		h1
+		{
+			color: #4000ff;
+			font-size:60px;
+			text-shadow: 2px 2px white;
+			
+			
+		}	
+
+
+		
+</style>
+</head>
+<nav>
+</nav>
+
+<body>	
+<script type="text/javascript">
+var myWin=window.open('', '',"height=600,width=600,top=0,left=0,resizable");
+
+
+//	var newWin = window.open("wolfmovie.html",
+//	"myWin","height=450,width=720,resizable");
+//	document.write("<p>Opening a new window .</p>");
+//	document.write("<p>This window's name is: " + newWin.name + "</p>");
+	
+//var PopUp = null;
+
+
+	function closeMovie() {
+	  movieWin.close();
+	}
+	
+	function closeActor() {
+	  actorWin.close();
+	}
+
+	function closeMain() {
+	  myWin.close();
+	}
+	function PopUpWindow(url, PopName) {
+
+	 // open a new window by specifying the position of
+	 // the popup on the screen using top and left attributes.
+	 // the dependent variable allows the closing of the popup
+	 // when the main window that creates the popup closes.
+
+	 PopUp=window.open(url,PopName,"height=height,width=width,left=400, top=100,scrollbars,status,resizable,dependent");
+
+	 // put the popup on the front of all the windows
+
+	 PopUp.focus();
+	}
+	
+	function PopSize() {
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+	}
+function Moviesinventory(the_Title,the_Actor,the_Movieinfo,the_Actorinfo){
+this.Title = the_Title;
+this.Actor = the_Actor;
+this.Movieinfo = the_Movieinfo;
+this.Actorinfo = the_Actorinfo;
+}
+var ComMovie1 = new Moviesinventory("Wolf of the Wall Street", "Leonardo Di Caprio", "http://www.imdb.com/title/tt0993846/", "http://leonardodicaprio.com/");
+var movieWin;
+var actorWin;
+function getMovie () {
+movieWin=window.open(ComMovie1.Movieinfo,'',"height=600,width=600,top=0,left=0,resizable");
+}
+
+function getActorInfo () {
+//actorWin.document.write("<a href=ComMovie1.Actorinfo > CLICK HERE TO CLOSE THIS WINDOW </a> <br>");	
+actorWin=window.open(ComMovie1.Actorinfo,'actorWin',"height=600,width=600,top=0,left=0,resizable");
+	                                              s
+}
+function getActor () {
+actorWin=window.open('ComMovie.Actorinfo', '',"height=600,width=600,top=0,left=0,resizable");
+actorWin.document.write("<p><b> About Loenardo Dicaprio </b></p>");
+actorWin.document.write("<p> Is an American actor and a film producer Leonardo Wilhelm DiCaprio is an American actor and a film producer. In the early 1990s, DiCaprio began his career by appearing in television commercials, after which he had recurring roles in various television series such as the soap opera, Santa Barbara, and the sitcom, Growing Pains. In 1993, he began his film career by starring as Josh in Critters 3. He starred in the film adaptation of the memoir, This Boy's Life, and was praised for his supporting role in What's Eating Gilbert Grape. He gained public recognition with leading roles in The Basketball Diaries, and the romantic drama Romeo  Juliet, before achieving international fame with James Cameron's epic romance, Titanic, which became the highest-grossing film to that point and is the second highest-grossing film of all time </p>");
+actorWin.document.write("<a href='javascript:opener.getActorInfo()' > CLICK HERE FOR MORE INFORMATION </a> <br>");	
+//actorWin.document.write("<a href=ComMovie1.Actorinfo > CLICK HERE TO CLOSE THIS WINDOW </a> <br>");	
+}
+
+myWin.document.write("<b> About Movie !!!! <b> <br>");
+myWin.document.write("<b><p>The Wolf of Wall Street is a 2013 American biographical black comedy crime film directed by Martin Scorsese. The screenplay by Terence Winter is adapted from the memoir of the same name by Jordan Belfort and recounts Belfort's perspective on his career as a stockbroker in New York City and how his firm Stratton Oakmont engaged in rampant corruption and fraud on Wall Street that ultimately led to his downfall. Leonardo DiCaprio (who also co-produced the film) stars as Belfort, with Jonah Hill as his business partner and friend Donnie Azoff, Margot Robbie as his second wife Naomi Lapaglia and Kyle Chandler as Patrick Denham, the FBI agent who tries to bring him down. Matthew McConaughey, Rob Reiner, Jon Favreau, Joanna Lumley Martin Scorsese directs the story of New York stockbroker Jordan Belfort. From the American dream to corporate greed, Belfort goes from penny stocks and righteousness to IPOs and a life of corruption in the late 80s. Excess success and affluence in his early twenties as founder of the brokerage firm Stratton Oakmont warranted Belfort the title The Wolf of Wall Street. -- (C) Paramount </p> </b>");
+myWin.document.write("<a href='javascript:opener.getMovie()' > CLICK HERE TO ACCESS TO THE MOVIE WINDOW </a> <br>");	
+myWin.document.write("<a href='javascript:opener.getActor()' > CLICK HERE TO ACCESS TO THE ACTOR WINDOW </a> <br>");	
+myWin.document.write("<a href='javascript:opener.closeMovie()' > CLICK HERE TO CLOSE THE MOVIE WINDOW </a> <br>");	
+myWin.document.write("<a href='javascript:opener.closeActor()' > CLICK HERE TO CLOSE THE ACTOR WINDOW </a> <br>");	
+myWin.document.write("<a href='javascript:opener.closeMain()' > CLICK HERE TO CLOSE THIS WINDOW </a> <br>");	
+
+
+
+
+
+</script>
+
+
+    <h1 align="center"><u>Lab8 Window</u></h1>
+	<p style="color:white; font-size:26px; text-align:center;height:2px">
+	<h2 align="center">The Wolf of wallstreet</h2>
+   <p style="color:white; font-size:36px; text-align:center">	
+
+</p>
+</body>
+</html>

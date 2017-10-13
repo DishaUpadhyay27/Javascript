@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DOM </title>
+<meta charset="utf-8">
+<style>
+	body
+	{
+	background-image: url("Image/hbd.jpg");
+	background-color:#ff884d;;
+	font-family:Calibri;
+	font-size:20px;
+	}
+	h2
+			{
+				font-family:Calibri ;
+				text-shadow: 0 4px 0 #ccc;
+			}
+			#background
+			{
+				background-color: lightblue;
+				opacity: 0.8;
+				border-radius: 50%;
+				width:720px;
+                height:540px;
+				text-align: center;
+				margin-left: 130px;
+				margin-top: 90px;
+				border: 2px solid green;
+			}
+	
+</style>
+</head>
+
+<body>
+<script type="text/javascript">
+
+function birthdetails() {
+var  brdemonth = prompt("What is your birth month?");
+var  brdeday = prompt("What is your birth day?");
+var  brdeyear = prompt("What is your birth year ?");
+
+function weekDay() {
+var now = this.getDay();
+var names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+return(names[now]);
+}
+
+function yearMonth() {
+var mnow = this.getMonth();
+var mnames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+return(mnames[mnow]);
+}
+
+Date.prototype.DayOfWeek = weekDay;
+Date.prototype.MonthofYear = yearMonth;
+
+var today = new Date();
+//var y2k = new Date("January 1, 2000");
+var mybd = new Date(brdemonth + " " + brdeday + "," + brdeyear);
+
+var curTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var myBirth = "(" + brdemonth + "/" + brdeday + "/" + brdeyear + ")";
+
+var yearDiff = today.getFullYear() - mybd.getFullYear();
+var nextBDYear = today.getFullYear() + 1;
+var nextBD = new Date(brdemonth + " " + brdeday + "," + nextBDYear);
+var newAge = yearDiff + 1;
+//Issue when birthday is same year as current but month is later then current, days shows greater then 365
+//Checking month and date is cumbersome so change current year and check is easy
+var ifBD = new Date(brdemonth + " " + brdeday + "," + today.getFullYear());
+if (ifBD > today) {
+var bdToCheck = ifBD;
+} else {
+var bdToCheck = nextBD;
+}
+
+var diff_date = bdToCheck - today;
+var nextDaysL = Math.floor(diff_date/86400000);
+var nextHoursL = Math.floor((diff_date % 86400000)/3600000);
+var nextMinL = Math.floor(((diff_date % 86400000) % 3600000)/60000);
+var nextSecL = Math.floor((((diff_date % 86400000) % 3600000)%60000)/1000);
+
+var alivediff_date = today - mybd;
+var aliveDaysL = Math.floor(alivediff_date/86400000);
+var aliveHoursL = Math.floor((alivediff_date % 86400000)/3600000);
+var aliveMinL = Math.floor(((alivediff_date % 86400000) % 3600000)/60000);
+var aliveSecL = Math.floor((((alivediff_date % 86400000) % 3600000)%60000)/1000);
+
+document.getElementById('currentDate').innerHTML = "Today is " + today.DayOfWeek() + ", " + today.MonthofYear() + " " + today.getDate() + ", " + today.getFullYear() + " " + curTime;
+document.getElementById('myDetail').innerHTML = "I was born on " + mybd.MonthofYear() + " " + mybd.getDate() + ", " + mybd.getFullYear() + ".  " + myBirth;
+document.getElementById('nextAge').innerHTML = "I am " + yearDiff + " years old, and will turn  " + newAge + "  in: <br>" + 
+nextDaysL + " days, " + nextHoursL + " hours, " + nextMinL + " minutes, " + nextSecL + " seconds ";
+document.getElementById('aliveNow').innerHTML = "I am been alive for ....  <br>" +  
+aliveDaysL + " days, " + aliveHoursL + " hours, " + aliveMinL + " minutes, " + aliveSecL + " seconds";
+
+}
+
+</script>
+
+
+<body onload="birthdetails()">
+		<div id="background"> <br><br>
+			<h2> MY AGE </h2>
+			<h3 id="currentDate"> </h3>
+			<h3 id="myDetail"> </h3>
+			<h3 id="nextAge"> </h3>
+			<h3 id="aliveNow"> </h3>
+		</div>
+
+	</body>
+</html>

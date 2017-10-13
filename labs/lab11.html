@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Events</title>
+  <meta charset="utf-8">
+</head>
+<style type ="text/css">		
+div{
+   	width:50%;
+	height:100px;
+	padding:10px;
+	margin:10px 0;
+	text-align :center;
+}
+#myDiv{
+background-color:#bf00ff;
+border:4px solid red;
+color:lightgreen;
+
+}
+.movieName1 { background-color: lightgrey; 
+border:4px solid blue;
+color:black;
+
+}
+
+</style>
+<body>
+
+
+<div id="myDiv" onclick="clickMovie()"> 
+<h1>Click me to a add a new movie</h1>  </div>
+<script type="text/javascript">
+
+function clickMovie() {
+
+var text1 = document.getElementById("myDiv");
+var movieName = prompt("Enter your movie?","The Avengers");
+var parent = text1.parentNode;
+
+var theDiv2 = document.createElement("div");
+theDiv2.className = "movieName1";
+
+var headingelement = document.createElement("H1");
+var text2 = document.createTextNode(movieName)
+headingelement.appendChild(text2);
+//document.body.appendChild(headingelement);
+theDiv2.appendChild(headingelement);
+
+
+//var insertedElement = parentElement.insertBefore(newElement, referenceElement);
+
+//If referenceElement is null, newElement is inserted at the end of the list of child nodes.
+// insertedElement: The node being inserted, that is newElement
+// parentElement: The parent of the newly inserted node.
+// newElement: The node to insert.
+// referenceElement: The node before which newElement is inserted.
+
+//Lab10	
+//document.body.insertBefore(theDiv2,text1);
+//document.body.insertBefore(theDiv2,parent);
+
+parent.insertBefore(theDiv2,text1);
+
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Lab 20 - iframe</title>
+	<style type ="text/css">
+		
+	{
+	font-family:Calibri;
+	font-size:20px;
+	background-image: url("t.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	}
+	
+		article
+		{
+			width: 10%;
+			margin: 10px 10px 10px 10px;
+		}
+		h1
+		{
+			color: pink;
+			font-size:40px;
+			text-shadow: 1px 1px black;
+			
+			
+		}
+#myDiv{
+background-color:#bf00ff;
+border:4px solid red;
+color:lightgreen;
+}		
+		.tabletag 
+		{
+			font-family: verdana, arial, sans-serif;
+			font-align :center
+			border-width: 5px;
+			border-color: #6ba535;
+			border-collapse: collapse;
+			margin-left:0px;
+			margin-right:0px;
+			background-attachment : fixed; 
+			color: yellow;
+			  font-size: 20px;
+			
+		}
+ 
+		.tabletag th 
+		{
+			border: 4px solid red;
+			padding: 1px;
+			text-align:center;
+			 width: 10%;
+			 height: 20px;
+			 color: yellow;
+			   font-size: 20px;
+			 
+		}
+ 
+		.tabletag td 
+		{
+			border: 4px solid black;
+			padding: 2px;	
+			text-align:center;
+			width: 10%;
+			 height: 20px;
+			 color: yellow;
+			  font-size: 20px;
+			
+		}	
+</style>
+<body>
+<script type="text/javascript">
+		
+var imageList1 = ['Image/lab20_1.jpg', 'Image/lab20_2.jpg', 'Image/lab20_3.jpg'];
+var imageList2 = ['Image/lab20_4.jpg', 'Image/lab20_5.jpg', 'Image/lab20_6.jpg'];
+
+var descList1 = ['Coffee Table', 'Sofa 1', 'Sofa 2'];
+var descList2 = ['Closet', 'Bed', 'Glass'];
+
+function changeCategory(obj) {
+//  var selNum = obj.Cat.options[obj.Cat.selectedIndex].value;
+var selNum = obj.selectedIndex;
+if (selNum == 1) {
+document.forms[0].Imag.selectedIndex = 0;
+for (var i = 0; i < 3; i++) {
+document.forms[0].Imag.options[i+1].innerText = descList1[i];
+document.forms[0].Imag.options[i+1].value = imageList1[i];
+//document.myForm.Imag.options[i+1] = new Option(descList1[i].name);  will not work, not sure why
+}
+
+} else if (selNum == 2) {
+document.forms[0].Imag.selectedIndex = 0;
+for (var i = 0; i < 3; i++) {
+document.forms[0].Imag.options[i+1].innerText = descList2[i];
+document.forms[0].Imag.options[i+1].value = imageList2[i];
+}
+} else {
+var frame = document.getElementById("myFrame");
+frame.src = "Image/1.jpg";
+//frame.src = "";
+document.forms[0].Imag.selectedIndex = 0;
+//frame.value = ""
+//document.forms[0].Imag.options[i+1].innerText = "";
+//document.forms[0].Imag.options[i+1].innerText = "";
+//document.forms[0].Imag.options[i+1].innerText = null;
+//document.forms[0].Imag.options[i+1].value = null;
+}
+}
+function loadImages(obj1) {
+var sel = Cat.selectedIndex;
+var selNum2 = Imag.selectedIndex;
+if (selNum2 != 0 && sel != 0) {
+var frame = document.getElementById("myFrame");
+frame.src = document.forms[0].Imag.options[selNum2].value;
+} else {
+var frame = document.getElementById("myFrame");
+frame.src = "Image/1.jpg";
+document.forms[0].Imag.options[i+1].innerText = "";
+
+frame.selectedIndex = 0;
+}
+}
+</script>
+
+<h1 align="center"><u>Lab20 iframe</u></h1>
+<p style="color:white; font-size:26px; text-align:center">
+<!-- Had to use value of 0,1,2 instead of string, did not work -->
+<form name="myForm">
+<select id="Cat" onchange="changeCategory(this)" multiple >
+<option value="0" selected> Furniture </option>
+<option value="1"> LivingRoom </option>
+<option value="2"> BedRoom </option>
+</select>
+<select id="Imag" size="4" onchange="loadImages(this)" multiple">
+<option value="0" disabled> Images </option>
+<option value="1"> </option>
+<option value="2"> </option>
+<option value="3"> </option>
+</select>
+</form>
+<iframe id="myFrame" width="800" height="800" seamless="seamless" src="Image/1.jpg">
+<p>Your browser does not support iframes.</p>
+</iframe>
+
+ </p>
+</body>
+</html>

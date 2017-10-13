@@ -1,0 +1,191 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+<head> 
+<meta charset="utf-8" /> 
+<title>Products Information</title> 
+	<style type ="text/css">
+	body{
+	padding:0;
+	margin:0;
+	text-font-family: Verdana;
+	background-color:yellow;
+		.container{
+		width:960px;
+		margin-left:auto;
+		margin-right:auto;
+		background:#ffff;
+			}
+header{
+   	width:100%;
+	height:100px;
+	background:#;
+	text-align :center;
+}
+header1{
+	color:White;
+	padding:20px;
+	text-align:center;
+	}
+nav{
+	background: green;
+	height: 40px;
+	width: 100%;
+}	
+nav a{
+	text-decoration: none;
+	color: fff;
+	margin-right: 5px;
+	padding: 5px;
+	line-height: 2.1em;
+	}
+nav a :hover{
+	background: #666;
+	}
+section{
+	width : 100%
+	padding: 5x;
+}	
+Footer{
+	background: green;
+	text-align: center;
+	background-colorcolor: green;
+	height: 80px;
+	width:100%;
+}	
+</style>
+<script type="text/javascript"> 
+function Products(_name, _image, _description) { 
+this.name = _name; 
+this.image = _image; 
+this.description = _description; 
+this.dispalyProductnfo = dispalyProduct; 
+} 
+
+function addTheImage1() {
+    var img = document.createElement('img');
+    img.src = "Living Room/First pic.jpg";
+    document.body.appendChild(img);
+}
+
+function createProduct1() { 
+addTheImage1();
+var product1 = new Products("Living room frames", "product1.jpg", "We provide varities of frame according to your living room.We have different hapes round,triangle,rectangle.We also have idea and concept which show you how to decor your living room with our product"); 
+product1.dispalyProductnfo();
+} 
+
+function addTheImage2() {
+    var img = document.createElement('img');
+    img.src = "Living Room/Bedroom pic.jpg";
+    document.body.appendChild(img);
+}
+
+function createProduct2() { 
+var product2 = new Products("Master bedroom frames", "product2.jpg", "Romantic and heart shape , Frames which give you feeling of most romantic style with your personalise pictures in our crystal style frames. Each and every concept of frames will give you way to make your home more lively "); 
+product2.dispalyProductnfo(); 
+} 
+
+function dispalyProduct() { 
+var strContent = ""; 
+strContent = "<table class='product'><tr>" 
++ "<td class='tdspace'>&nbsp;</td>" 
++ "<td class='td1'><img src='images//" + this.image + "' /></td>" 
++ "<td class='td2'><span>" + this.name + "</span> <p>" + this.description + "</p></td></tr></table> "; 
+document.write(strContent); 
+} 
+
+function createProduct3() { 
+var product3 = new Products("Chandelier", "product5.jpg", "Our new product have wide varities to bring charm in your rooms.It gives your room attractive look"); 
+product3.dispalyProductnfo(); 
+} 
+
+function selectProduct() { 
+var firstName = prompt("Please enter First Name:"); 
+var lastName = prompt("Please enter Last Name:"); 
+alert("Welcome " + firstName + " " + lastName + ""); 
+displayProductFunction(); 
+} 
+
+function createProduct4() { 
+var product4 = new Products("Kids room frames", "product6.jpg", "Kid room with toys and wall color our fram perfectly match your requirement"); 
+product4.dispalyProductnfo(); 
+} 
+
+
+function displayProductFunction() { 
+lastName = parseInt(prompt("Please enter Your Selection:\n\t 1 : Living room frames  \n\t 2: Master bedroom frames \n\t 3: Chandelier \n\t 4: Kids room frames\n")); 
+switch (lastName) { 
+case 1: 
+	createProduct1(); 
+break; 
+case 2: 
+	createProduct2(); 
+break; 
+case 3: 
+	createProduct3(); 
+break; 
+case 4: 
+	createProduct4(); 
+break; 
+default: 
+	document.write("<p>Unable to find your selection!</p>"); 
+break; 
+} 
+
+if (lastName <= 4) { 
+var checkAgain = confirm("Looking for more product Information?"); 
+if (checkAgain == true) { 
+displayProductFunction(); 
+} 
+} 
+} 
+</script> 
+</head> 
+<body> 
+<div class="bodyContent"> 
+</div> 
+<div class="headerDiv2"> 
+<nav>
+		<a href="index.html">Home</a>		
+		<a href="FAQS.html">FAQ's</a>
+		<a href="AboutUs.html">About Us</a>
+		<a href="WhatsNew.html">What's New </a>
+		<a href="ProductInformation">Product Information </a>
+		<a href="CustomerService.html">Contact</a>
+		
+</nav><hr size="2" noshade style="clear:both;" /> 
+</div> 
+</header> 
+<section class="Important"> 
+<article class="ImportantContent"> 
+<h2 class="headingStyle">Product Information</h2> 
+<blockquote> 
+<p class="headingStyle">Give your life more charm with our products!</p> 
+</blockquote> 
+
+<script type="text/javascript"> 
+selectProduct() 
+</script> 
+</article> 
+</section> 
+
+<footer> Disha Upadhyay R-CITY MALL GHATKOPAR (W), MUMBAI,91 22 4085716342
+	<nav>
+	<a href="index.html">Home</a>		
+		<a href="FAQS.html">FAQ's</a>
+		<a href="AboutUs.html">About Us</a>
+		<a href="WhatsNew.html">What's New </a>
+		<a href="Catalogofproduct.html">Catalog of product </a>
+		<a href="ProductInformation.html">Product Information </a>
+		<a href="Employmentpage.html">Employment Page </a>
+		<a href="CustomerService.html">Contact</a>	
+		<a href="what'sNewpage.html">What's New page</a>	
+		<a href="order.html">Order Form</a>	
+		
+		</nav>
+
+</footer> 
+</div> 
+
+</body> 
+</html>

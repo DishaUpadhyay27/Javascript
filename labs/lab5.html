@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+<head> 
+<meta charset="utf-8" /> 
+<title>Lab5 - Objects and Conditionals </title> 
+<style type="text/css"> 
+body { 
+color:#191970 ; 
+font-size: 21px; 
+background-size: cover; 
+width: 100%; 
+background-image: url("Image/Interstellar.jpg");
+} 
+
+body p { 
+color: darkred; 
+text-align: center; 
+} 
+
+.content { 
+text-align: center; 
+color: red; 
+font-size: 26px; 
+font-weight: bold; 
+opacity: 0.8; 
+width:50%; 
+margin:10px auto; 
+} 
+</style> 
+<script type="text/javascript"> 
+
+
+
+function Movies(_genre, _title, _rating, _price) { 
+this.genre = _genre; 
+this.title = _title; 
+this.rating = _rating; 
+this.price = _price; 
+this.dispalyMovieInfo = dispalyMovie; 
+} 
+
+
+function dispalyMovie() { 
+document.write("Title: " + this.title + "<br>"); 
+document.write("Genre: " + this.genre + "<br>"); 
+document.write("Rating: " + this.rating + " / 10.0 <br>"); 
+document.write("Price: $" + this.price + "<br>"); 
+document.write("<br/>"); 
+document.write("<br/>"); 
+} 
+
+
+var movie1 = new Movies("Fantasy/Imagination", "Interstellar", 8.5,17.50 ); 
+
+
+var movie2 = new Movies("Fantasy/Action","Iron Man", 7.0, 19); 
+
+
+</script> 
+</head> 
+<body> 
+<h1 align="center"><u>Lab5 - Objects and Conditionals</u></h1> 
+<h2 align="center">Hollywood Movies</h2> 
+<div class="content"> 
+
+<script type="text/javascript"> 
+
+
+	movie1.dispalyMovieInfo(); 
+
+
+	movie2.dispalyMovieInfo(); 
+
+
+</script> 
+
+
+</div> 
+
+</body> 
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Link of Minute </title>
+<meta charset="utf-8">
+<style>
+	body
+	{
+	font-family:Calibri;
+	color:#0040ff;
+	font-size:20px;
+    background-repeat: no-repeat;
+	background-size: 100%,100%;
+	background-image: url("Image/clock.jpg");
+	}
+	
+ #myDivbox{
+ color:white;
+  width: 70%;
+  padding:5px;
+   height: 300px;
+   border: 5px solid blue;
+   	border-align:center;
+	position:absolute;
+    text-align:center;
+	margin-right: 1px;
+	font size:20px;
+	font-weight: normal;
+	top:80px;
+	left:10%;
+	 padding-top: 3cm;
+
+	}
+	
+</style>
+</head>
+<body>
+<script type="text/javascript">
+
+function getLink() {
+
+function readObject(the_url,the_name) {
+this.url = the_url;
+this.name = the_name;
+}
+
+var inst1 = new readObject("http://www.google.com", "Google");
+var inst2 = new readObject("http://www.yahoo.com", "Yahoo");
+var inst3 = new readObject("http://www.msn.com", "MSN");
+var inst4 = new readObject("http://www.facebook.com", "Facebook");
+var inst5 = new readObject("http://itu.edu", "ITU");
+
+var allInst = new Array();
+allInst.push(inst1);
+allInst.push(inst2);
+allInst.push(inst3);
+allInst.push(inst4);
+allInst.push(inst5);
+
+var today = new Date();
+var min = today.getMinutes();
+var len = allInst.length;
+var nowIndex = min%len;
+
+document.getElementById('link').innerHTML = "<a href='" + allInst[nowIndex].url + "' > Click on the link to see a website. </a>";
+document.getElementById('name').innerHTML = allInst[nowIndex].name;
+
+}
+
+function runTimer() {
+getLink();
+setInterval("getLink()", 60000);
+}
+
+</script>		 
+
+<body onload="runTimer()">
+<h1 align="center"><u>Lab 15 - Link of Minute</u></h1>
+	
+<p style="color:Red;font-size:26px; text-align:center">	
+<div id="background"> 
+<div id="myDivbox" >
+<h3 id="link"> </h3>
+<h3 id="name"> </h3>
+</div>	
+</body>
+</html>
+

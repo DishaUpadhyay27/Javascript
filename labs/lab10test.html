@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DOM </title>
+<meta charset="utf-8">
+<style>
+.colorStyle{ background-color: lightgrey; 
+}
+</style>
+</head>
+
+<body>
+ <div id="divTag" style="background-color:#ffff00"; font-size:18px; line-height:10px>
+   <p>I love watching movies. <br/>
+      This is one of my favourites:</p>
+</div> 			
+<script type="text/javascript">
+var movieName = prompt("What movie do you like?","The Avengers");
+//document.write("Movie: " + movieName + "<br>");
+var theDiv = document.createElement("div");
+theDiv.className = "colorStyle";
+theDiv.innerHTML = movieName + " is a good movie";
+
+var text1 = document.body.getElementsByTagName("p")[0];
+var parent = text1.parentNode;
+//document.write("parent.nodeName = ", parent.nodeName);
+document.body.insertBefore(theDiv,text1);
+
+var movieName1 = prompt("One of my favourite","The Bourne Ultimatum")
+var text2 = document.createTextNode(movieName1)
+var headingelement = document.createElement("H1");
+headingelement.appendChild(text2);
+document.body.appendChild(headingelement);
+
+//function insertImage() {}
+var theDiv2 = document.createElement("div");
+theDiv2.className = "colorStyle";
+theDiv2.innerHTML = "A picture is worth a thousand words. <br><br>" + "<img src='./Image/b.jpg' alt='b' width='304' align='center-left'>" ;
+
+//If referenceElement is null, newElement is inserted at the end of the list of child nodes.
+document.body.insertBefore(theDiv2,null);
+
+display();  
+</script>		 
+</body>
+</html>
+

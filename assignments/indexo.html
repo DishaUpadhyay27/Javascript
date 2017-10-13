@@ -1,0 +1,309 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="utf-8" /> 
+<title>Home Page</title>
+	
+	
+	<style type ="text/css">
+	body{
+	padding:0;
+	margin:0;
+	text-font-family: Verdana;
+	background-color:yellow;
+	  	}
+	.container{
+		width:960px;
+		margin-left:auto;
+		margin-right:auto;
+		background:#ffff;
+			}
+header{
+   	width:100%;
+	height:100px;
+	background:white;
+	text-align :center;
+}
+header1{
+	color:White;
+	padding:20px;
+	text-align:center;
+	}
+nav{
+	background: green;
+	height: 40px;
+	width: 100%;
+}	
+nav a{
+	text-decoration: none;
+	color: fff;
+	margin-right: 5px;
+	padding: 5px;
+	line-height: 2.1em;
+	}
+nav a :hover{
+	background: #666;
+	}
+section{
+	width : 100%
+	padding: 5x;
+}	
+Footer{
+	background: green;
+	text-align: center;
+	background-colorcolor: green;
+	height: 80px;
+	width:100%;
+}
+</style>
+
+	</head>
+<body onload="showTime()">
+<h3 id="curTime"> </h3>
+<h3 id="curMessage"> </h3>
+<h3 id="curQuote"> </h3>
+<h3 id="curCalendar"> </h3>
+
+<script type="text/javascript">
+
+var disText = ['What are you doing that early?', 'Good Morning', 'Good Afternoon', 'Good Evening'];
+function showTimeNow() {
+var today = new Date();
+
+var hrs = today.getHours();
+var min = today.getMinutes();
+var sec = today.getSeconds();
+// hours, min and sec when in single digit needs an additional 0
+if (hrs < 10) {
+hrs = "0" + hrs;
+}
+if (min < 10) {
+min = "0" + min;
+}
+if (sec < 10) {
+sec = "0" + sec;
+}
+var tim = hrs + ":" + min + ":" + sec;
+document.getElementById('curTime').innerHTML = tim;
+setTimeout("showTimeNow()", 500);
+}
+
+function showMessage () {
+var today = new Date();
+var hrs = today.getHours();
+if (hrs <= 0 && hrs < 6) {
+document.getElementById('curMessage').innerHTML = disText[0];
+document.getElementById('curMessage').style.backgroundColor = "red";
+} else if (hrs < 12) {
+document.getElementById('curMessage').innerHTML = disText[1];
+document.getElementById('curMessage').style.backgroundColor = "blue";
+} else if (hrs < 18) {
+document.getElementById('curMessage').innerHTML = disText[2];
+document.getElementById('curMessage').style.backgroundColor = "green";
+} else {
+document.getElementById('curMessage').innerHTML = disText[3];
+document.getElementById('curMessage').style.backgroundColor = "pink";
+}
+}
+
+var allQuote = ['Quote 1', 'Quote2', 'Quote3', 'Quote4', 'Quote5'];
+function showQuote() {
+var len = allQuote.length;
+var num1 = Math.random() * len;
+var quote1 = Math.floor(num1);
+document.getElementById('curQuote').innerHTML = allQuote[quote1];
+}
+
+function disCalendar() {
+monthnames = new Array(
+"January", "Februrary", "March", "April",
+"May", "June", "July", "August", "September",
+"October", "November", "December");
+
+var linkcount=0;
+function addlink(month, day, href) {
+var entry = new Array(3);
+entry[0] = month;
+entry[1] = day;
+entry[2] = href;
+this[linkcount++] = entry;
+}
+Array.prototype.addlink = addlink;
+linkdays = new Array();
+monthdays = new Array(12);
+monthdays[0]=31;
+monthdays[1]=28;
+monthdays[2]=31;
+monthdays[3]=30;
+monthdays[4]=31;
+monthdays[5]=30;
+monthdays[6]=31;
+monthdays[7]=31;
+monthdays[8]=30;
+monthdays[9]=31;
+monthdays[10]=30;
+monthdays[11]=31;
+
+todayDate=new Date();
+thisday=todayDate.getDay();
+thismonth=todayDate.getMonth();
+thisdate=todayDate.getDate();
+
+thisyear = todayDate.getYear();
+thisyear = thisyear % 100;
+
+thisyear = ((thisyear < 50) ? (2000 + thisyear) : (1900 + thisyear));
+
+if (((thisyear % 4 == 0)
+&& !(thisyear % 100 == 0))
+||(thisyear % 400 == 0)) monthdays[1]++;
+
+startspaces = thisdate;
+var calDisp = "<table style='margin:auto'>";
+while (startspaces > 7) startspaces -=7;
+startspaces = thisday - startspaces + 1;
+
+if (startspaces < 0) startspaces +=7;
+
+//document.write("<table style='margin:auto'>");
+var temp1 = "<tr><td colspan=7 style='text-align:center'>" + monthnames[thismonth] + " " + thisyear + "</td></tr>";
+calDisp = calDisp + temp1;
+calDisp = calDisp + "<tr>";
+calDisp = calDisp + "<td align=center>Su</td>";
+calDisp = calDisp + "<td align=center>M</td>";
+calDisp = calDisp + "<td align=center>Tu</td>";
+calDisp = calDisp + "<td align=center>W</td>";
+calDisp = calDisp + "<td align=center>Th</td>";
+calDisp = calDisp + "<td align=center>F</td>";
+calDisp = calDisp + "<td align=center>Sa</td>";
+calDisp = calDisp + "</tr>";
+calDisp = calDisp + "<tr>";
+
+for (i=0;i<startspaces;i++) {
+calDisp = calDisp + "<td> </td>";
+}
+
+count=1;
+while (count <= monthdays[thismonth]) {
+for (b = startspaces;b<7;b++) {
+linktrue=false;
+calDisp = calDisp + "<td>";
+
+for (c=0;c<linkdays.length;c++) {
+if (linkdays[c] != null) {
+if ((linkdays[c][0]==thismonth + 1) && (linkdays[c][1]==count)) {
+//document.write("<a href=\"" + linkdays[c][2] + "\">");
+calDisp = calDisp + linkdays[c][2];
+linktrue=true;
+      }
+   }
+}
+
+if (count==thisdate) {
+calDisp = calDisp + "<span style='color:red'>";
+}
+
+if (count <= monthdays[thismonth]) {
+calDisp = calDisp + count;
+}
+else {
+calDisp = calDisp + " ";
+}
+
+if (count==thisdate) {
+calDisp = calDisp + "</span>";
+}
+
+if (linktrue)
+//document.write("</a>");
+calDisp = calDisp + "</td>";
+count++;
+}
+calDisp = calDisp + "</tr>";
+calDisp = calDisp + "<tr>";
+startspaces=0;
+}
+calDisp = calDisp + "</table>";
+document.getElementById('curCalendar').innerHTML = calDisp;
+}
+
+function showTime() {
+showTimeNow();
+setTimeout("showTimeNow()", 500);
+showMessage();
+showQuote();
+disCalendar();
+}
+</script>
+
+
+  <div class "container"
+        <header>
+		<h1>Fabulous Decor</h1>
+		</header>
+		<nav>
+	<a href="index.html">Home</a>		
+		<a href="FAQS.html">FAQ's</a>
+		<a href="AboutUs.html">About Us</a>
+		<a href="WhatsNew.html">What's New </a>
+		<a href="Catalogofproduct.html">Catalog of product </a>
+		<a href="ProductInformation.html">Product Information </a>
+		<a href="Employmentpage.html">Employment Page </a>
+		<a href="CustomerService.html">Contact</a>	
+		<a href="what'sNewpage.html">What's New page</a>			
+		</nav>
+		<section>
+						 <!--Heading-->
+				 <div id="container">
+			<div id="header">
+				<div class="name"><h2>Living Room</h2></div>
+				 		<img src="LivingRoom/First pic.jpg" alt="Couch wall" width="304" align="left" >
+				<figcaption><h2>Couch wall</h2></figcaption>
+			</figure> 
+				<p>Get living room color ideas and spring decorating ideas with these pictures of decor for spring living rooms.The living room and family room are typically the most utilized spaces in the home; this is particularly true if they are designed for regular family gatherings or a game space for kids. These high-traffic spaces can see their share of spills, scrapes and scuffs.
+Our color experts offer the following suggestions:Ceilings create an opportunity to introduce another color or dimension to the room. Try a darker tone on a tall ceiling or a lighter color if the walls are dark. Light source varies from room to room, and home to home, and thus could impact the look of a color. Try the sample paint on the wall and view the color throughout the day.
+    Choose a color based on how it looks when you are most often using it.
+    Highlight unique architectural elements with dark, rich colors. In historic or architecturally significant homes, these colors will highlight the beauty of its heritage.
+Valspar offers a variety of online tools and </p>
+		</div> 				 
+		 	 <!--Paragraph-->
+		 <divclass=pic>
+			<figure>
+  				<img src="LivingRoom/Third Pic.jpg" alt="Living room" width="304" align="Right" >
+  				<figcaption><h2>Wow! Looks awesome <h2></figcaption>
+			</figure>
+			<p>The key to decorating with one colour on walls and furniture is to use different shades of the same colour together, such as a soft apple green sofa alongside emerald metal side tables. It?s also a good idea to mix textures, for example combining matt paint on walls with a sleek, glossy lamp base. Try and work your colour scheme into all areas of your living room - such as your bay windows.Get living room color ideas and spring decorating ideas with these pictures of decor for spring living rooms.Are you painting a large room, perhaps two? You may want to spread the project over two days, such as a weekend. Prepare the room(s) on day one and save the actual painting for day two. If you're feeling ambitious and want to tackle it all in one day, pace yourself and try not to cut any corners during the prep stage.
+Choose the right painting clothes. Wear something you won't mind getting paint on, like an old pair of jeans and a t-shirt. Don't forget to reward yourself (and anyone who helped). Make sure you wash your hands after your prep and paint work and then consider ordering a pizza to celebrate your progress after a productive dayGet living room color ideas and spring decorating ideas with these pictures of decor for spring living rooms.Are you painting a large room, perhaps two? You may want to spread the project over two days, such as a weekend. Prepare the room(s) on day one and save the actual painting for day two. If you're feeling ambitious and want to tackle it all in one day, pace yourself and try not to cut any corners during the prep stage.
+Choose the right painting clothes. Wear something you won't mind getting paint on, like an old pair of jeans and a t-shirt. Don't forget to reward yourself (and anyone who helped). Make sure you wash your hands after your prep and paint work and then consider ordering a pizza to celebrate your progress after a productive day.Get living room color ideas and spring decorating ideas with these pictures of decor for spring living rooms.Are you painting a large room, perhaps two? You may want to spread the project over two days, such as a weekend. Prepare the room(s) on day one and save the actual painting for day two. If you're feeling ambitious and want to tackle it all in one day, pace yourself and try not to cut any corners during the prep stage.
+Choose the right painting clothes. Wear something you won't mind getting paint on, like an old pair of jeans and a t-shirt. Don't forget to reward yourself (and anyone who helped). Make sure you wash your hands after your prep and paint work and then consider ordering a pizza to celebrate your progress after a productive day</p>
+		</div>
+ 	  	 <!--Paragraph-->
+		 <divclass=pic>
+			<figure>
+  				<img src="LivingRoom/Living room.jpg" alt="Living room" width="304" align="left" >
+  				<figcaption><h2>Lovely Collection<h2></figcaption>
+			</figure>
+			<p>The key to decorating with one colour on walls and furniture is to use different shades of the same colour together, such as a soft apple green sofa alongside emerald metal side tables. It?s also a good idea to mix textures, for example combining matt paint on walls with a sleek, glossy lamp base. Try and work your colour scheme into all areas of your living room - such as your bay windows.Get living room color ideas and spring decorating ideas with these pictures of decor for spring living rooms.Are you painting a large room, perhaps two? You may want to spread the project over two days, such as a weekend. Prepare the room(s) on day one and save the actual painting for day two. If you're feeling ambitious and want to tackle it all in one day, pace yourself and try not to cut any corners during the prep stage.
+Choose the right painting clothes. Wear something you won't mind getting paint on, like an old pair of jeans and a t-shirt. Don't forget to reward yourself (and anyone who helped). Make sure you wash your hands after your prep and paint work and then consider ordering a pizza to celebrate your progress after a productive dayGet living room color ideas and spring decorating ideas with these pictures of decor for spring living rooms.Are you painting a large room, perhaps two? You may want to spread the project over two days, such as a weekend. Prepare the room(s) on day one and save the actual painting for day two. If you're feeling ambitious and want to tackle it all in one day, pace yourself and try not to cut any corners during the prep stage.
+Choose the right painting clothes. Wear something you won't mind getting paint on, like an old pair of jeans and a t-shirt. Don't forget to reward yourself (and anyone who helped). Make sure you wash your hands after your prep and paint work and then consider ordering a pizza to celebrate your progress after a productive day.Get living room color ideas and spring decorating ideas with these pictures of decor for spring living rooms.Are you painting a large room, perhaps two? You may want to spread the project over two days, such as a weekend. Prepare the room(s) on day one and save the actual painting for day two. If you're feeling ambitious and want to tackle it all in one day, pace yourself and try not to cut any corners during the prep stage.
+Choose the right painting clothes. Wear something you won't mind getting paint on, like an old pair of jeans and a t-shirt. Don't forget to reward yourself (and anyone who helped). Make sure you wash your hands after your prep and paint work and then consider ordering a pizza to celebrate your progress after a productive day</p>
+		</div>
+ 		
+	
+	</section>
+		<footer>Disha Upadhyay R-CITY MALL GHATKOPAR (W), MUMBAI,91 22 4085716342
+		<nav>
+		<a href="index.html">Home</a>		
+		<a href="FAQS.html">FAQ's</a>
+		<a href="AboutUs.html">About Us</a>
+		<a href="WhatsNew.html">What's New </a>
+		<a href="Catalogofproduct.html">Catalog of product </a>
+		<a href="Employmentpage.html">Employment Page </a>
+		<a href="CustomerService.html">Contact</a>	
+		<a href="WhatsNewpage.html">What's New page</a>
+		</nav>
+		
+</footer>
+	</div>	
+		</body>
+</html>

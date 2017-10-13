@@ -1,0 +1,99 @@
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Lab19 - Images</title>
+	<style type ="text/css">
+	body
+	{
+	font-family:Calibri;
+	font-size:20px;
+	background-image: url("Image/back.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	}
+	
+	
+
+		h1
+		{
+			color: pink;
+			font-size:40px;
+			text-shadow: 1px 1px black;
+				
+		}
+
+		h2
+		{
+			color: yellow;
+			font-size:40px;
+			text-shadow: 1px 1px black;
+		}
+
+#anim
+	{
+
+     height:40px;
+	  font size:18px;
+       font-family: Book Antiqua;
+	   display: block;
+		  margin-top:2px;
+	margin-bottom:2px;      	    
+	}
+#desc
+    {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: red;
+        min-height: 150px;
+        font-size: 30px;		
+    }		
+	
+	
+
+</style>
+</head>
+<nav>
+</nav>
+<body>
+
+<script type="text/javascript">
+function showImg(img,name){
+var imgU = document.getElementById("img");
+var imgName = document.getElementById("desc");
+imgU.src = img;
+imgName.innerHTML = name;
+}
+</script>
+<h1 align="center"><u>Lab19 Image</u></h1>
+<p style="color:white; font-size:26px; text-align:center">
+<h3align="center">NATIONAL GEOGRAPHIC CONTEST</h3>
+<p style="color:black; font-size:26px; text-align:center">
+
+	
+<form name="myForm">	
+<table align="center"  border="all" cellpadding="10" cellspacing="5">
+<tr>
+<td>
+<div onmouseout="showImg('./Image/goldengate.jpg', '')" onmouseover="showImg('./Image/sky.jpg', 'Dream big sky is limit')">
+<h2 >Sky Diving</h2>
+</div>
+<div onmouseout="showImg('./Image/goldengate.jpg', '')" onmouseover="showImg('./Image/scuba.jpg', 'Aqua Experience')">
+<h2>Scuba Diving</h2>
+</div>
+<div onmouseout="showImg('./Image/goldengate.jpg', '')" onmouseover="showImg('./Image/adv.jpg', 'Life is worth daring')">
+<h2>Adventure Sport</h2>
+</div>
+<br>
+<br>
+<p id="desc"> </p>
+</td>
+<td>
+<!-- Issue when using an id for style so need to define it below and seems to work -->
+<div> <img = id="img" width="500" height="550" src="./Image/goldengate.jpg"> </div>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

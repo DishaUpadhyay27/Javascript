@@ -1,0 +1,127 @@
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Lab 20 - iframe</title>
+	<style type ="text/css">
+		
+	{
+	font-family:Calibri;
+	font-size:20px;
+	background-image: url("t.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	}
+	
+		article
+		{
+			width: 10%;
+			margin: 10px 10px 10px 10px;
+		}
+		h1
+		{
+			color: pink;
+			font-size:40px;
+			text-shadow: 1px 1px black;
+			
+			
+		}
+#myDiv{
+background-color:#bf00ff;
+border:4px solid red;
+color:lightgreen;
+		
+		.tabletag 
+		{
+			font-family: verdana, arial, sans-serif;
+			font-align :center
+			border-width: 5px;
+			border-color: #6ba535;
+			border-collapse: collapse;
+			margin-left:0px;
+			margin-right:0px;
+			background-attachment : fixed; 
+			color: yellow;
+			  font-size: 20px;
+			
+		}
+ 
+		.tabletag th 
+		{
+			border: 4px solid red;
+			padding: 1px;
+			text-align:center;
+			 width: 10%;
+			 height: 20px;
+			 color: yellow;
+			   font-size: 20px;
+			 
+		}
+ 
+		.tabletag td 
+		{
+			border: 4px solid black;
+			padding: 2px;	
+			text-align:center;
+			width: 10%;
+			 height: 20px;
+			 color: yellow;
+			  font-size: 20px;
+			
+		}	
+</style>
+<body>
+<script type="text/javascript">
+
+var imageList1 = ['1.jpg', 'ba.jpg', 'fi.jpg'];
+var imageList2 = ['d.jpg', 't.jpg', 'imag.jpg'];
+
+var descList1 = ['Sofa', 'Coffee Table', 'Love Seat'];
+var descList2 = ['Bed Frame', 'Dressing Table', 'Glass'];	
+		
+function changeCategory(imgLocation) {
+
+var index = imgLocation.selectedIndex;
+if (index == 0) {
+
+} 
+for (var i = 0; i < 3; i++) {
+
+	document.forms[0].images.options[i+1].innerText = descList1[i];
+	document.forms[0].images.options[i+1].value = imageList1[i];
+	}
+}
+			
+function displayDetails(images)
+{
+//	var index = images.selectedIndex;
+//	var frame = document.getElementById("myFrame");
+//	frame.src = document.forms[0].images.options[index].value;
+}
+</script>
+
+</head>
+<body 	align="center">
+
+		
+<h1 align="center"><u>Lab20 iframe</u></h1>
+<p style="color:white; font-size:26px; text-align:center">
+<iframe id="myFrame" width="400" height="200" seamless="seamless">
+<p>Your browser does not support iframes.</p>
+</iframe>
+
+<form name="myForm">
+<select id="imgLocation" onchange="getImage(this)" multiple >
+<option value="0" > Furniture </option>
+<option value="1"> LivingRoom </option>
+<option value="2"> BedRoom </option>
+</select>
+<select id="images" size="4" onchange="displayDetails(this)" multiple">
+<option value="0" disabled> Images </option>
+<option value="1"></option>
+<option value="2"></option>
+<option value="3"></option>
+</select>
+</form>	
+</body>
+</html>

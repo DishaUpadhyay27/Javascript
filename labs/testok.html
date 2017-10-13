@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Programmingt</title>
+  <meta charset="utf-8">
+<script type="text/javascript">
+    function replaceMessage() {
+        var NewP = document.createElement("p");
+        var Text = document.createTextNode("www.cnn.com");
+        NewP.appendChild(Text);
+        var OldP = document.body.getElementsByTagName("p")[0];
+        var OldP1 = document.body.getElementsByTagName("p")[1];
+
+        OldP.parentNode.replaceChild(NewP, OldP);
+		OldP.parentNode.replaceChild(NewP, OldP1);
+
+    }
+</script>
+</head>
+<body>
+    <p>First</p>
+    <p>Second</p>
+    <p>Third</p>
+<p>
+  <script type="text/javascript">
+  replaceMessage();
+  </script>
+</p>
+</body>
+</html>

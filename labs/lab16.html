@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Lab16 - Calculator</title>
+	<style type ="text/css">
+	body
+	{
+	background-color:#ff884d;
+	font-family:Calibri;
+	font-size:20px;
+	background-image: url("Image/calci.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	
+	}
+	
+	h1
+		{
+			color: pink;
+			font-size:40px;
+			text-shadow: 1px 1px black;
+			
+			
+		}	
+			h2
+		{
+			color: green;
+			font-size:40px;
+			text-shadow: 1px 1px black;
+			
+			
+		}	
+		
+		
+		#myCalc 
+		{
+		border: 4px solid green;
+		text-align:center;
+		width: 85%;
+		color: yellow;
+		font-size: 20px;
+		padding:20px; 
+        padding-left:0px;		
+	  	padding-top: 15px;
+		margin:0 auto;
+	    margin-bottom: 10px;
+	    height:70%;
+	   border-radius: 20px;
+	   box-shadow: 4px 4px 25px 5px 	#ffff00;
+
+}
+		.bclass
+		{
+	width: 90%;
+	height: 70%;
+	border: 5px ;
+	padding: 6px;
+	border-radius: 3px;
+	padding-top: 10px;
+	 border-bottom-width: 15px;
+	margin-left: 50px;
+	margin-right: 160px;
+	color: black;
+	font-size: 24px;
+	letter-spacing: 12px;
+	text-align:center;
+	margin-top:20px;
+	margin-bottom:20px;
+	
+		
+				
+		}	   
+			
+		.aligntable
+		{
+		border: 1px solid black;
+		text-align:center;
+		width: 110%;
+		 height: 130%;
+		 font-size: 27px;
+	     padding:10px;  
+		  margin-left: 3cm;
+	  	background: white;
+		border:1px solid black;
+		border-radius:3px;
+		border-radius:7px;
+		
+		
+		}	
+</style>
+</head>
+<nav>
+</nav>
+
+<body>
+    <h1 align="center"><u>Lab16 Form</u></h1>
+	<p style="color:white; font-size:26px; text-align:center"> </p>
+	
+	<h2 align="center">Basic Calculator</h2>
+	<p style="color:white; font-size:36px; text-align:center">	</p>
+	
+	<br><br>
+<div id="myCalc">
+<form name="myForm">
+<table align="center">
+<tr> <td colspan="3"> <input class="aligntable" type="text" name="entry" align="center"> </td> </tr>
+
+<tr> 
+<td> <input type="button" value="1" name="1" class="bclass" onClick="myForm.entry.value += '1'"> </td>
+<td> <input type="button" value="2" name="2" class="bclass" onClick="myForm.entry.value += '2'"> </td>
+<td> <input type="button" value="3" name="3" class="bclass" onClick="myForm.entry.value += '3'"> </td>
+<td> <input type="button" value="+" name="+" class="bclass" onClick="myForm.entry.value += '+'"> </td>
+</tr>
+<tr> 
+<td> <input type="button" value="4" name="4" class="bclass" onClick="myForm.entry.value += '4'"> </td>
+<td> <input type="button" value="5" name="5" class="bclass" onClick="myForm.entry.value += '5'"> </td>
+<td> <input type="button" value="6" name="6" class="bclass" onClick="myForm.entry.value += '6'"> </td>
+<td> <input type="button" value="-" name="-" class="bclass" onClick="myForm.entry.value += '-'"> </td>
+</tr>
+<tr> 
+<td> <input type="button" value="7" name="7" class="bclass" onClick="myForm.entry.value += '7'"> </td>
+<td> <input type="button" value="8" name="8" class="bclass" onClick="myForm.entry.value += '8'"> </td>
+<td> <input type="button" value="9" name="9" class="bclass" onClick="myForm.entry.value += '9'"> </td>
+<td> <input type="button" value="x" name="x" class="bclass" onClick="myForm.entry.value += '*'"> </td>
+</tr>
+<tr> 
+<td> <input type="button" value="C" name="C" class="bclass"  onClick="myForm.entry.value = ''"> </td>
+<td> <input type="button" value="0" name="0" class="bclass" onClick="myForm.entry.value += '0'"> </td>
+<td> <input type="button" value="=" name="=" class="bclass" onClick="myForm.entry.value = eval(myForm.entry.value)"> </td>
+<td> <input type="button" value="/" name="/" class="bclass" onClick="myForm.entry.value += '/'"> </td>
+</tr>
+
+
+</table>
+</form>
+	</div>
+<script type="text/javascript">
+//<td> <input type="button" value="+" name="+" onClick="clickFirstButton()"> </td>
+
+
+</script>
+
+</body>
+</html>

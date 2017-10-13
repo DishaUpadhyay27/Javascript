@@ -1,0 +1,32 @@
+
+<html lang="en">
+<head>
+<title>JavaScript Programming</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+function Cisclass(the_prerequisite, the_units, the_room) {
+this.prerequisite = the_prerequisite;
+this.units = the_units;
+this.room = the_room;
+this.display = displayClass;
+}
+function displayClass() {
+document.write("Prerequisite: " + this.prerequisite + "<br>");
+document.write("Units: " + this.units + "<br>");
+document.write("Room: " + this.room + "<br>");
+}
+var JavaScriptclass = new Cisclass("HTML and Programming Language", 3, "307");
+var HTMLclass = new Cisclass("Basic Programming Language", 3, "305");
+</script>
+</head>
+<body>
+<script type="text/javascript">
+document.write("<H2>JavaScript Class</H2>");
+JavaScriptclass.display();
+document.write("<H2>HTML Class</H2>");
+HTMLclass.display();
+document.write("<hr>JavaScriptclass instance of Object =>" + (JavaScriptclass instanceof Object) + "<br>");
+document.write("JavaScriptclass instance of Cisclass =>" + (JavaScriptclass instanceof Cisclass)"<br>");
+</script>
+</body>
+</html>

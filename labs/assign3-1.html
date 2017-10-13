@@ -1,0 +1,198 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Lab7 - Loops</title>
+	<style type ="text/css">
+	body
+	{
+	background-color:#ff884d;
+	font-family:Calibri;
+	font-size:20px;
+	background-image: url("Image/hollywood.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	
+	}
+	
+		article
+		{
+			width: 10%;
+			margin: 10px 10px 10px 10px;
+		}
+		h1
+		{
+			color: pink;
+			font-size:40px;
+			text-shadow: 1px 1px black;
+			
+			
+		}	
+		.tabletag 
+		{
+			font-family: verdana, arial, sans-serif;
+			font-align :center
+			border-width: 5px;
+			border-color: #6ba535;
+			border-collapse: collapse;
+			margin-left:0px;
+			margin-right:0px;
+			background-attachment : fixed; 
+			color: yellow;
+			  font-size: 20px;
+			
+		}
+ 
+		.tabletag th 
+		{
+			border: 4px solid red;
+			padding: 1px;
+			text-align:center;
+			 width: 10%;
+			 height: 20px;
+			 color: yellow;
+			   font-size: 20px;
+			 
+		}
+ 
+		.tabletag td 
+		{
+			border: 4px solid black;
+			padding: 2px;	
+			text-align:center;
+			width: 10%;
+			 height: 20px;
+			 color: yellow;
+			  font-size: 20px;
+			
+		}	
+</style>
+</head>
+<nav>
+</nav>
+
+<body>
+
+    <h1 align="center"><u>Lab7 Loops</u></h1>
+	<p style="color:white; font-size:26px; text-align:center">
+	<h2 align="center">Movies Inventory</h2>
+	<p style="color:white; font-size:36px; text-align:center">	
+<script type="text/javascript">
+function Moviesinventory(the_Title,the_Rating,the_Price,the_image){
+//this.Genre = the_Genre;
+this.Title = the_Title;
+this.Rating = the_Rating;
+this.Price = the_Price;
+this.image = the_image;
+}
+
+function displayClass() {
+
+//document.write("<br>");
+//document.write("<br>");
+//document.write("<br>");
+//document.write("<br>");
+
+//document.write("Genre: " + this.Genre + "<br>");
+document.write("Title: " + this.Title + "<br>");
+document.write("Rating: " + this.Rating + "<br>");
+document.write("Price: " + this.Price + "<br>");
+document.write("<img src='Image/" + this.image + "' width='150px' height='250px'/>")
+
+//document.body.appendChild(img);
+//document.write("Price: " + this.Price + "<br>");
+// document.write("Image" + img + "<br>");
+//document.write(<"img src='Image/" + this.image +"' >")
+
+//document.write("<br>");
+//document.write("<br>");
+//document.write("<br>");
+//document.write("<br>");
+
+
+}
+var ComMovie1 = new Moviesinventory("frame", "White frames which make wall more charming .All your personal pics in our frame charm and décor will give smile on your face", "$150", "Untitled.jpg");
+var ComMovie2 = new Moviesinventory("Wood frame", "Fabulous item which décor your living room and make it unique from other. All unique items are available here", "$250","ima.jpg");
+var ComMovie3 = new Moviesinventory("Painting", "Look the frame give beautiful look in your living room", "$150", "Living Room2.jpg");
+var ComMovie4 = new Moviesinventory("Lovely decor", "Gorgeous look for your living room", "$170", "Third Pic.jpg");
+
+ComMovie1.getClass = displayClass;
+ComMovie2.getClass = displayClass;
+ComMovie3.getClass = displayClass;
+ComMovie4.getClass = displayClass;
+
+var AllCommovies = new Array();
+AllCommovies.push(ComMovie1);
+AllCommovies.push(ComMovie2);
+AllCommovies.push(ComMovie3);
+AllCommovies.push(ComMovie4);
+AllCommovies.getClass = displayClass;
+
+var SFMovie1 = new Moviesinventory("Terminator Genisys", "PG-13", "$11.99", "terminator.jpg");
+var SFMovie2 = new Moviesinventory("Jurassic World", "PG-13", "$12.49", "jurassic.jpg");
+var SFMovie3 = new Moviesinventory("Edge of Tomorrow", "PG-13", "$12.49", "edgeoftomorrow.jpg");
+var SFMovie4 = new Moviesinventory("The Hunger Games", "PG-13", "$11.99", "hungergames.jpg");
+
+SFMovie1.getClass = displayClass;
+SFMovie2.getClass = displayClass;
+SFMovie3.getClass = displayClass;
+SFMovie4.getClass = displayClass;
+var AllSFmovies = new Array();
+AllSFmovies.push(SFMovie1);
+AllSFmovies.push(SFMovie2);
+AllSFmovies.push(SFMovie3);
+AllSFmovies.push(SFMovie4);
+AllSFmovies.getClass = displayClass;
+
+var DramaMovie1 = new Moviesinventory("Concussion", "PG-13", "$13.49", "concussion.jpg");
+var DramaMovie2 = new Moviesinventory("True Story", "R", "$12.99","truestory.jpg");
+var DramaMovie3 = new Moviesinventory("Taken 2", "PG-13", "$12.99", "taken2.jpg");
+var DramaMovie4 = new Moviesinventory("Southpaw", "R", "$12.99", "southpaw.jpg");
+
+DramaMovie1.getClass = displayClass;
+DramaMovie2.getClass = displayClass;
+DramaMovie3.getClass = displayClass;
+DramaMovie4.getClass = displayClass;
+var AllDramamovies = new Array();
+AllDramamovies.push(DramaMovie1);
+AllDramamovies.push(DramaMovie2);
+AllDramamovies.push(DramaMovie3);
+AllDramamovies.push(DramaMovie4);
+AllDramamovies.getClass = displayClass;
+
+var AllMovies = new Array(3);
+AllMovies[0] = AllCommovies;
+AllMovies[1] = AllSFmovies;
+AllMovies[2] = AllDramamovies;
+
+AllMovies.getClass = displayClass;
+</script>
+	<table class="tabletag">
+	<col style="width:1%">
+	<col style="width:1%">
+	<col style="width:1%">
+	
+<script type="text/javascript">
+
+document.write("Number of genres in the inventory: " + AllMovies.length + "<br>");	
+for (i=0; i<AllDramamovies.length; i++) {
+for (j=0; j<AllMovies.length; j++) {
+document.write("<td>");
+
+AllMovies[j][i].getClass();
+document.write("</td>");
+
+}
+document.write("</tr>");
+
+
+
+}
+
+
+
+</script>
+</table>
+
+ </p>
+</body>
+</html>

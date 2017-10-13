@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        body
+        {            
+            background-image: url("pics/m.jpg");
+			background-size : 100% 100%;
+			background-attachment : fixed;
+			        }
+		article
+		{
+			width: 80%;
+			margin: 30pxpx auto auto auto;
+		}
+		h1
+		{
+			color: green;
+			font-size:40px;
+			text-shadow: 1px 1px black;
+		}	
+	
+ 
+			.tabletag 
+		{
+			font-family: verdana, arial, sans-serif;
+			font-align :center;
+			border-width: 5px;
+			border-color: #6ba535;
+			border-collapse: collapse;
+			margin-left:0px;
+			margin-right:0px;
+			background-attachment : fixed; 
+			color: blue;
+			  font-size: 20px;
+			
+		}
+			.tabletag td 
+		{
+			border: 4px solid green;
+			padding: 14px;	
+			background-color: #aaaccc;
+		}
+		
+				
+		
+</style>
+
+
+</head>
+ 
+<body>
+<article>
+	<h1 align = "center"> <b>Display the cruises:<b> <span style="color:lightblue"><u>Detail Below</u></span></h1></caption>
+    <table class="tabletag">
+	<col style="width:40%">
+	<col style="width:25%">
+	<col style="width:25%">
+<script type="text/javascript">
+
+//var newWin11 = window.open("","","height=50,width=50,left=200,top=200,menubar,toolbar,status,resizable");
+
+function Moviesinventory(the_CruiseDate,the_CruiseDestination,the_CruiseDescrption,the_CruiseURL,the_ShipName,the_ShipDescription,the_ShipURL,the_Price){
+this.CruiseDate = the_CruiseDate;
+this.CruiseDestination = the_CruiseDestination;
+this.CruiseDescription = the_CruiseDescrption;
+this.CruiseURL = the_CruiseURL;
+this.ShipName = the_ShipName;
+this.ShipDescription = the_ShipDescription;
+this.ShipURL = the_ShipURL;
+this.Price = the_Price;
+}
+	function PopUpWindow(url, PopName) {
+
+	 // open a new window by specifying the position of
+	 // the popup on the screen using top and left attributes.
+	 // the dependent variable allows the closing of the popup
+	 // when the main window that creates the popup closes.
+
+	 PopUp=window.open(url,PopName,"height=500,width=500,scrollbars,status,resizable,dependent");
+
+	 // put the popup on the front of all the windows
+
+	 PopUp.focus();
+	}
+	
+function closePop() {
+            // close the popup if it's open
+            if (PopUp != null) {
+                PopUp.close();
+                PopUp = null;
+            }
+}
+
+//function close1() {
+//newWin.opener.close();
+
+//function.close2
+//PopUp.opener.close();
+
+
+	//newWin=window.open('','Win','width=300,height=200,top=100,left=600');
+	//newWindocument.write("<script type=\"text/javascript\">" +
+	//"function close3() {opener.close();}" + newWin.document.write("Hello ") + "<\/script>");
+	//newWin.document.write("this is 'myWindow'<br>");
+	//newWin.document.write("<a href='javascript:close3()'>
+	//Close source window</a><br>");
+	//newWin.document.write("<a href='javascript:close()'>
+	//Close this window</a><br>");
+	//newWin.opener.document.write("<p>This is the source window!</p>");
+	//newWin.opener.document.write("<a href='javascript:close1()'>
+	//Close source window</a><br>");
+	//PopUp.opener.document.write("<a href='javascript:close2()'>
+	//Close myWindow</a><br>");
+           
+function loadDesc(desc, url) {
+var PopUp = window.open('', 'PopName',"height=500,width=500,scrollbars,status,resizable,dependent");
+
+PopUp.document.write(desc);
+PopUp.document.write("<a href='javascript:opener.PopUpWindow(\"" + url + "\",\"xz\");'>click for more info</a></br></br>");
+
+PopUp.focus();
+//closePop();
+//document.write("desc" + desc, "url" + url + "<br>");
+}
+
+
+function displayList() {
+//document.write("<br>");
+//document.write("<br>");
+//document.write("<br>");
+//document.write("<br>");
+document.write("<td>");
+document.write("CruiseDate: " + this.CruiseDate + "<br>");
+document.write("</td>");
+//document.write("CruiseDate: " + this.CruiseDescription + "<br>");
+//document.write("<td>");
+document.write("<td>");
+document.write("<a href='javascript:loadDesc(\"" + this.CruiseDescription + "\",\"" + this.CruiseURL + "\");'>" + this.CruiseDestination + "</a><br>");
+document.write("</td>");
+document.write("<td>");
+document.write("<a href='javascript:loadDesc(\"" + this.ShipDescription + "\",\"" + this.ShipURL + "\");'>" + this.ShipDescription + "</a><br>");
+document.write("</td>");
+//document.write("ShipName: " + this.ShipName + "<br>");
+document.write("<td>");
+
+document.write("Price: " + this.Price + "<br>");
+document.write("</td>");
+
+//document.body.appendChild(img);
+//document.write("Price: " + this.Price + "<br>");
+// document.write("Image" + img + "<br>");
+//document.write(<"img src='Image/" + this.image +"' >")
+
+//document.write("<br>");
+//document.write("<br>");
+//document.write("<br>");
+//document.write("<br>");
+
+}
+
+//var ComMovie1 = new Moviesinventory("Wed May 10 2017", "Alaska", "ne reaction from you: WOW","https://book.bestholidaycruises.com/web/cruises/moreInfo.aspx?pid=875945#itinerary","Royal Caribbean, Anthem of the Seas","10 night eastern caribbean cruise","http://www.royalcaribbean.com/anthemoftheseas/","$1,375.00");
+
+var ComMovie1 = new Moviesinventory("Thu Nov 10 2016", "Carribean", "The Quantum class of ships is a new leap forward in vessel design with groundbreaking innovations like RipCord by iFly, the first skydiving experience at sea. And the North Star, a jewel-shaped, glass capsule with a spectacular ocean view. Plus, it is introducing transformational venues like the Seaplex and Two70° that morph from day to night. All these new onboard features are designed to elicit just one reaction from you: WOW","https://book.bestholidaycruises.com/web/cruises/moreInfo.aspx?pid=875945#itinerary","Royal Caribbean, Anthem of the Seas","10 night eastern caribbean cruise","http://www.royalcaribbean.com/anthemoftheseas/","$1,375.00");
+var ComMovie2 = new Moviesinventory("Wed Nov 23 2016", "Hawaii", "Newly enhanced with our latest innovations, Grand Princess continues to offer the signature service for which Princess Cruises is renowned. With our innovative features like Movies Under the Stars®, our Italian-inspired Piazza and The Sanctuary®, there are plenty of ways to help you escape completely. Sip on a variety of soothing teas at Leaves Tea Lounge & Library, or enjoy hand-tossed pizza in Alfredo’s, our full-service pizzeria. Plus, our new nightclub, The One5, provides a vibrant ambience to dance the night away","https://book.bestholidaycruises.com/web/cruises/moreInfo.aspx?pid=884738","Grand Princess", "15 nights - Hawaii: Princess, Grand Princess", "http://www.princess.com/learn/ships/ap/","$1,330");
+var ComMovie3 = new Moviesinventory("Wed May 10 2017", "Alaska", "Formed in 2002 by luxury cruise industry veterans", "https://book.bestholidaycruises.com/web/cruises/moreInfo.aspx?pid=936765#itinerary","Ocenia cruises ","11 nights - Alaska: Oceania Cruises, Regatta","https://www.oceaniacruises.com/","$2,449");
+
+ComMovie1.getClass = displayList;
+ComMovie2.getClass = displayList;
+ComMovie3.getClass = displayList;
+
+var AllCommovies = new Array();
+AllCommovies.push(ComMovie1);
+AllCommovies.push(ComMovie2);
+AllCommovies.push(ComMovie3);
+AllCommovies.getClass = displayList;
+
+
+
+var AllMovies = new Array(1);
+AllMovies[0] = AllCommovies;
+//AllMovies[1] = AllSFmovies;
+//AllMovies[2] = AllDramamovies;
+
+//AllMovies.getClass = displayList;
+</script>
+	<table class="tabletag">
+	<col style="width:1%">
+	<col style="width:1%">
+	<col style="width:1%">
+	
+<script type="text/javascript">
+
+document.write("<td>");
+
+document.write("Category");
+document.write("</td>");
+document.write("<td>");
+document.write("Title")
+document.write("</td>");
+document.write("<td>");
+document.write("Description")
+document.write("</td>");
+document.write("<td>");
+document.write("Rates")
+document.write("</tr>");
+
+
+//document.write("Number of genres in the inventory: " + AllMovies.length + "<br>");	
+for (i=0; i<3; i++) {
+for (j=0; j<1; j++) {
+
+
+AllMovies[j][i].getClass();
+//document.write("</td>");
+
+}
+document.write("</tr>");
+
+}
+</script>    
+</article>
+</body>
+ 
+</html>
